@@ -1,14 +1,15 @@
 import React from 'react'
-import { Spotlight } from './ui/Spotlight'
 import { cn } from '@/lib/utils'
-import { TextGenerateEffect } from './ui/text-generate-effect'
-import MagicButton from './ui/MagicButton'
-import { FaLocationArrow } from 'react-icons/fa6'
+import { Spotlight } from './ui/Spotlight'
+import { socials } from '@/data'
+import { FaLocationDot } from 'react-icons/fa6';
 
+
+const accent = 'text-purple-400'; 
 
 const Hero = () => {
     return (
-        <div className='pb-20 pt-36'>
+        <div className='py-20'>
             <div>
                 <Spotlight className='-top-40 -left-10 md:-left-32 md:-top-20 h-screen' fill='white' />
                 <Spotlight className='top-10 left-full  h-[80vh] w-[50vw]' fill='purple' />
@@ -19,37 +20,54 @@ const Hero = () => {
                     className={cn(
                         "absolute inset-0",
                         "[background-size:120px_120px]",
-                       "[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
+                        "[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
                     )}
                 />
                 {/* Radial gradient for the container to give a faded look */}
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center
-                  [mask-image:radial-gradient(ellipse_at_center,transparent_1%,black)] bg-black-100"/>
-                    
-                
-
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_1%,black)] bg-black-100" />
             </div>
-            <div className='flex justify-center relative my-20 z-10'>
-                <div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'>
-                 {/* <h2 className='uppercase tracking-widest text-xs text-center text-blue-100 max-w-80'>
-                    Dynamic Web Magic with Next.js
-                 </h2> */}
-                 <TextGenerateEffect
-                 className='text-center text-[40px] mx-4 text-white md:text-5xl lg:text-6xl'
-                 words='Hi I&apos;m Suvigya Garg, a Software Developer based in India.'
-                 />
-                 <p className='text-center font-normal text-white md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
-                  Hi I&apos;m Suvigya Garg, a Full Stack Developer based in India.
-                 </p>
-                 <a href='#about'>
-                  <MagicButton 
-                  title ="Show my work"
-                  icon={<FaLocationArrow/>}
-                  position='right'
-                  />
-                 </a>
+            <div className='flex justify-start relative my-20 z-10'>
+                <div className='w-full md:w-5/8 px-6 md:px-16 flex flex-col gap-6'>
+                    <span className={cn('font-mono text-purple-400 mb-2 text-[30px]')}>
+                        {'<span>'} Hey, I&apos;m Suvigya {'</span>'}
+                    </span>
+                    <h1 className="font-mono text-8xl  font-bold text-white leading-tight">
+                   A<span className="text-purple-900">{' {Software}'}</span>
+                        <br /> Developer<span className={accent}>_</span>
+                    </h1>
+                    <p className={cn('max-w-2xl  text-base md:text-lg lg:text-2xl font-mono text-neutral-400')}>
+                        <span className={accent}>{'<p>'} </span>
+                        With over 3 years of experience in writing<span className={accent}> Javascript </span> and more recenntly  <span className={accent}> GO</span>.
+                        Have Worked with frameworks like
+                         <span className={accent}> React </span>,
+                        <span className={accent}> Next.js </span>,
+                        <span className={accent}> Express.js </span>, and
+                        <span className={accent}> Expo </span>... 
+                        I like to work on both Frontend and Backend.
+                        <span className={accent}>{'<p> '}</span>
+                    </p>
+                {/* Add where you are based at */}
+                    {/* <span className='flex items-center text-purple-400 font-mono'><FaLocationDot className=' mr-2 text-white'/>
+                    Delhi, India</span> */}
+                    <div className="flex items-center gap-4 mt-4">
+                        {socials.map((social) => (
+                            <a
+                                key={social.alt}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:scale-130 transition-transform"
+                            >
+                                <img
+                                    src={social.src}
+                                    alt={social.alt}
+                                    className="h-8 w-8 object-contain"
+                                    draggable="false"
+                                />
+                            </a>
+                        ))}
+                    </div>
                 </div>
-
             </div>
         </div>
     )
