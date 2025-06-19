@@ -56,12 +56,12 @@ const Hero = () => {
                                 href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:scale-130 transition-transform"
+                                className="hover:scale-180 transition-transform"
                             >
                                 <img
                                     src={social.src}
                                     alt={social.alt}
-                                    className="h-8 w-8 object-contain"
+                                    className="h-5 w-5 object-contain"
                                     draggable="false"
                                 />
                             </a>

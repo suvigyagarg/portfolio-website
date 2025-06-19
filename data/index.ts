@@ -1,7 +1,7 @@
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
+  { name: "Experiences", link: "#experiences" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -82,4 +82,32 @@ export const skills = [
   { label: 'Backend:', value: 'GO, Python, Express.js, Node.js' },
   { label: 'Database:', value: 'PostgreSQL, Mongodb' },
   { label: 'Tools & Technologies:', value: 'Git, GenerativeAI, Dockers' },
+];
+
+
+export const companies = [
+  {
+    name: 'Synapsis Medical Technologies pvt. ltd.',
+    logo: '/synapsis.jpeg', 
+    years: 'May 2025 – Present',
+    title: 'SDE Intern',
+    about: [
+      'Led development of scalable web applications, improving performance and user experience for millions of users.',
+      'Implemented machine learning algorithms to enhance search functionality.',
+      'Collaborated with cross-functional teams to integrate new features seamlessly.'
+    ],
+    skills: ['Python', 'Javascript','Next.js', 'Express.js', 'REST API','Postman','MongoDB'],
+  },
+  {
+    name: 'Unikon.ai',
+    logo: '/unikon.jpeg',
+    years: 'June 2024 – Aug 2024',
+    title: 'SDE Intern',
+    about: [
+      'Collaborated on the development of the frontend for an internal tool, assisting the team in assessing onboarded users. This helped refine the marketing strategy, leading to a 20% boost in marketing efficiency.',
+      'Collaborated in developing a robust API (30+API routes created) ,enabling smooth data retrieval from the database leading to a 25% reduction in frontend loading time and improved user experience .',
+      'Developed an independent application to display a user referral leaderboard, contributing to a 15% increase in user referrals.'
+    ],
+    skills: ['Javascript', 'Next.js', 'React', 'Tailwind CSS', 'Express.js','PostgreSQL(sequelize)'],
+  }
 ];

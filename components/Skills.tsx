@@ -5,10 +5,10 @@ import { skills, skillSvgs } from '@/data';
 
 const Skills = () => {
   return (
-    <section className="w-full flex flex-col items-center justify-center pb-12 pt-6">
+    <section className="w-full flex flex-col items-center justify-center pb-12 pt-6" id='projects'>
       <div className="font-mono md:text-5xl font-bold text-white mb-10 text-center">
         <span className="text-purple-400 text-[32px] ">• Projects</span>
-        <h2 className='pt-6'>My Skills</h2>
+        <h2 className='pt-10'>My Skills</h2>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full">
         
