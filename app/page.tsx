@@ -7,16 +7,18 @@ import { navItems } from "@/data";
 
 export default function Home() {
   return (
-   <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-2">
-    <div className="max-w-[1650px] w-full">
-      <FloatingNav
-      navItems={navItems}
-      />
-      <Hero/>
-      <Skills/>
-      <RecentProjects/>
-      <WorkExperience/>
-    </div>
-   </main>
+    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-2">
+      <div className="max-w-[1650px] w-full">
+        <FloatingNav
+          navItems={navItems}
+          className="text-2xl font-semibold"
+        />
+        <Hero />
+        <Skills />
+        <RecentProjects />
+        <WorkExperience />
+      </div>
+    </main>
+
   );
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { skills, skillSvgs } from '@/data';
 
-
 const Skills = () => {
   return (
     <section className="w-full flex flex-col items-center justify-center pb-12 pt-6" id='projects'>
@@ -31,12 +30,13 @@ const Skills = () => {
             {skills.map((skill, idx) => (
               <li key={idx} className={cn('relative text-neutral-400')}> 
                 <span className={cn( 'text-white absolute -left-10 top-1/2 -translate-y-1/2 text-4xl z-10')}>•</span>
-                <span className="text-white">{skill.label}</span> {skill.value}
+                <span className="text-white font-bold">{skill.label}</span> <span className='text-xl'>{skill.value}</span>
               </li>
             ))}
           </ul>
         </div>
       </div>
+
     </section>
   );
 };

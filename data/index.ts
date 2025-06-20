@@ -1,8 +1,8 @@
 export const navItems = [
-  { name: "About", link: "#about" },
+  { name: "Home", link: "#home" },
   { name: "Projects", link: "#projects" },
   { name: "Experiences", link: "#experiences" },
-  { name: "Contact", link: "#contact" },
+  // { name: "Activity", link: "#activity" },
 ];
 
 export const projects = [
@@ -62,26 +62,31 @@ export const socials = [
     alt: 'Gmail',
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg',
   },
+  {
+    href: 'https://www.google.com/',
+    alt: 'Resume',
+    src: '/resume.svg',
+  }
 ];
 
 export const skillSvgs = [
   { src: '/javascript.svg', alt: 'Javascript' }, 
+    { src: '/go.svg', alt: 'GO' }, 
   { src: '/react.svg', alt: 'React.js' },
   { src: '/next.svg', alt: 'Next.js' },
-  { src: '/python.svg', alt: 'Python' }, 
-  { src: '/go.svg', alt: 'GO' }, 
-  { src: '/express.svg', alt: 'Express.js' }, 
-  { src: '/docker.svg', alt: 'Docker' },
+  { src: '/node.svg', alt: 'Node.js' }, 
   { src: '/mongo.svg', alt: 'MongoDB' }, 
-  { src: '/postgresql.svg', alt: 'PostgreSQL' }, 
-   { src: '/expo.svg', alt: 'Expo' }, 
+  { src: '/postgresql.svg', alt: 'PostgreSQL' },
+  { src: '/postman.svg', alt: 'Postman' }, 
+  { src: '/docker.svg', alt: 'Docker' }, 
+   { src: '/gits.svg', alt: 'git' }, 
 ];
 
 export const skills = [
-  { label: 'Frontend:', value: 'Javascript, Typescript, React.js, Next.js' },
-  { label: 'Backend:', value: 'GO, Python, Express.js, Node.js' },
+  { label: 'Frontend:', value: 'Javascript,Typescript,React.js,Next.js,Expo' },
+  { label: 'Backend:', value: 'GO,Express.js,Node.js' },
   { label: 'Database:', value: 'PostgreSQL, Mongodb' },
-  { label: 'Tools & Technologies:', value: 'Git, GenerativeAI, Dockers' },
+  { label: 'Tools & Technologies:', value: 'Git,GenerativeAI,Dockers' },
 ];
 
 
