@@ -11,9 +11,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: 'Suvigya Garg — A Renaissance Practice',
+  title: 'Suvigya Garg - Software Engineer',
   description:
-    'A software engineer by profession — but a Renaissance man at heart, forever drawn to contribute across fields, and to keep learning.',
+    'I am a 22 year old software engineer based out of India — whos drawn to contribute across fields, to grow and learn.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -85,17 +85,19 @@
 .plImg {
   aspect-ratio: 16 / 10;
   background-color: var(--parchment-deep);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   border: 1px solid var(--line);
   position: relative;
   overflow: hidden;
+}
+.plImgPhoto {
+  object-fit: cover;
+  z-index: 0;
 }
 .plImg::before {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   opacity: 0.18;
   background-image: repeating-linear-gradient(135deg, transparent 0 8px, rgba(33, 29, 24, 0.05) 8px 9px);
 }

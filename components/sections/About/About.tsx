@@ -1,5 +1,6 @@
 'use client';
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 import {about, books } from '@/data/portfolio';
 import SectionHead from '@/components/base/SectionHead/SectionHead';
 import styles from './About.module.css';
@@ -39,7 +40,6 @@ export default function About() {
           meta="A brief Glimpse at my life and Idea's."
         />
 
-        {/* essay list */}
         <div
           ref={listRef}
           className={`${styles.list} ${activeIdx !== null ? styles.hovering : ''}`}
@@ -59,7 +59,6 @@ export default function About() {
           ))}
         </div>
 
-        {/* floating preview plate */}
         <div
           ref={plateRef}
           className={`${styles.plate} ${activeIdx !== null && activeIdx !== 3 ? styles.show : ''}`}
@@ -70,10 +69,17 @@ export default function About() {
             ['--tilt' as string]: tilt,
           }}
         >
-          <div
-            className={styles.plImg}
-            style={active?.image ? { backgroundImage: `url(${active.image})` } : undefined}
-          />
+          <div className={styles.plImg}>
+            {active?.image && (
+              <Image
+                className={styles.plImgPhoto}
+                src={active.image}
+                alt=""
+                fill
+                sizes="360px"
+              />
+            )}
+          </div>
           <p className={styles.plExcerpt}>{active?.excerpt}</p>
           <p className={styles.plBody}>{active?.body}</p>
           <p className={styles.plTag}>{active?.tag}</p>

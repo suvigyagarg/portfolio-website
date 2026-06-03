@@ -1,5 +1,6 @@
 'use client';
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 import styles from './DemoPlate.module.css';
 
 interface Props {
@@ -40,8 +41,14 @@ export default function DemoPlate({
       <span className={`${styles.corner} ${styles.br}`} />
 
       {thumbnail && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img className={styles.thumb} src={thumbnail} alt="" aria-hidden="true" />
+        <Image
+          className={styles.thumb}
+          src={thumbnail}
+          alt={caption}
+          aria-hidden="true"
+          fill
+          sizes="(max-width: 820px) 100vw, 50vw"
+        />
       )}
 
       <video
