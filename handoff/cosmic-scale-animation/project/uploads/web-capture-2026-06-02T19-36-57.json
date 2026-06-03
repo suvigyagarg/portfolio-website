@@ -1,0 +1,33 @@
+[
+  {
+    "id": "cap_mpx1gijn_2frzn5",
+    "selector": "canvas",
+    "label": "canvas",
+    "tag": "canvas",
+    "url": "https://www.shopify.com/editions/winter2026?utm_source=newsroom&utm_medium=newsroom&utm_campaign=winter26edition-launch_Q425BACADO&utm_content=merchantnewsroom-en-US-v1",
+    "title": "Shopify Editions | Winter '26",
+    "timestamp": "2026-06-02T19:36:42.467Z",
+    "innerText": "",
+    "outerHTML": "<canvas style=\"display: block; width: 1248px; height: 923px;\" data-engine=\"three.js r181\" width=\"2496\" height=\"1846\"></canvas>",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 1248,
+      "height": 923
+    },
+    "computedStyles": {
+      "display": "block",
+      "width": "1248px",
+      "height": "923px",
+      "border": "0px solid rgb(0, 0, 0)",
+      "box-sizing": "border-box",
+      "font-family": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "font-size": "14px",
+      "line-height": "21px",
+      "text-decoration": "none",
+      "overflow": "clip",
+      "transition": "all"
+    },
+    "cssRules": []
+  }
+]

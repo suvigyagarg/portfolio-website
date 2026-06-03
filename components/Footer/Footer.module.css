@@ -1,0 +1,28 @@
+.colophon {
+  position: relative;
+  z-index: 2;
+  padding: 60px var(--gutter) 50px;
+  border-top: 1px solid var(--line);
+}
+
+.colophon :global(.wrap) {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.colophon p {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+}
+
+.sig {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px !important;
+  color: var(--ink-2) !important;
+}

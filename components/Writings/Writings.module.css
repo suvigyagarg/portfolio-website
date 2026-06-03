@@ -1,0 +1,207 @@
+.section {
+  position: relative;
+  z-index: 2;
+  padding-block: clamp(90px, 12vw, 180px);
+}
+
+/* ---- essay list ---------------------------------------------------------- */
+.list {
+  position: relative;
+  z-index: 2;
+}
+
+.entry {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding-block: clamp(24px, 3.2vw, 40px);
+  border-top: 1px solid var(--line);
+  cursor: pointer;
+  position: relative;
+  transition: opacity 0.5s var(--ease);
+}
+.entry:last-child { border-bottom: 1px solid var(--line); }
+
+.eNum {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-3);
+  width: 2.5ch;
+  flex: none;
+}
+
+.eTitle {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1;
+  font-size: clamp(30px, 5vw, 64px);
+  letter-spacing: 0.005em;
+  transition: transform 0.6s var(--ease-out), color 0.4s var(--ease);
+}
+
+.eMeta {
+  margin-left: auto;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  white-space: nowrap;
+  transition: opacity 0.4s var(--ease);
+}
+
+/* dim siblings on hover */
+.hovering .entry        { opacity: 0.32; }
+.hovering .entry.active { opacity: 1; }
+.active .eTitle         { transform: translateX(26px); }
+
+@media (max-width: 720px) {
+  .active .eTitle { transform: translateX(10px); }
+  .eMeta          { display: none; }
+}
+
+/* ---- floating excerpt plate --------------------------------------------- */
+.plate {
+  position: absolute;
+  z-index: 5;
+  width: min(360px, 44vw);
+  pointer-events: none;
+  background: var(--parchment-2);
+  border: 1px solid var(--line);
+  padding: 15px;
+  box-shadow: 0 40px 80px -44px rgba(33, 29, 24, 0.72);
+  opacity: 0;
+  transform: translateY(18px) rotate(var(--tilt, -2deg)) scale(0.96);
+  transition: opacity 0.5s var(--ease), transform 0.65s var(--ease-out);
+}
+.plate.show {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--tilt, -2deg)) scale(1);
+}
+
+.plImg {
+  aspect-ratio: 16 / 10;
+  background: var(--parchment-deep);
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+.plImg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-image: repeating-linear-gradient(135deg, transparent 0 8px, rgba(33, 29, 24, 0.05) 8px 9px);
+}
+
+.plExcerpt {
+  margin: 14px 3px 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.plBody {
+  margin: 10px 3px 0;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+.plTag {
+  margin: 13px 3px 2px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+@media (max-width: 720px) { .plate { display: none; } }
+
+/* ---- bookshelf ----------------------------------------------------------- */
+.bookshelf { margin-top: clamp(74px, 9vw, 128px); }
+
+.shelfHead {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.sEyebrow {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.sTitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(22px, 2.6vw, 30px);
+  margin: 0;
+}
+
+.sLine {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+  display: block;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 clamp(28px, 5vw, 70px);
+}
+
+.book {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-block: 18px;
+  border-top: 1px solid var(--line);
+  transition: transform 0.45s var(--ease-out);
+}
+.book:hover { transform: translateX(10px); }
+
+.bDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--line-2);
+  flex: none;
+  align-self: center;
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.book:hover .bDot { background: var(--ink); border-color: var(--ink); }
+
+.bTitle {
+  font-family: var(--serif);
+  font-size: clamp(19px, 2vw, 23px);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.bAuthor {
+  margin-left: auto;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) { .books { grid-template-columns: 1fr; } }

@@ -1,0 +1,108 @@
+.hero {
+  position: relative;
+  z-index: 2;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 120px 60px;
+}
+
+.hero :global(.wrap) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heroEyebrow {
+  margin-bottom: 34px;
+  opacity: 0;
+}
+
+.heroName {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(58px, 13vw, 184px);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  margin: 0;
+  opacity: 0;                  /* held invisible; WAAPI animation reveals it */
+  transform-origin: 50% 58%;  /* burst from slightly below centre, matching original */
+}
+
+/* character-split spans injected by JS */
+.word { display: inline-block; }
+.ch   { display: inline-block; }
+
+.heroRole {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  opacity: 0;
+}
+
+.heroRole span {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.dash {
+  width: 46px;
+  height: 1px;
+  background: var(--line-2);
+}
+
+.heroIntro {
+  margin-top: 40px;
+  max-width: 54ch;
+  font-family: var(--serif);
+  font-size: clamp(19px, 2.3vw, 27px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink-2);
+  opacity: 0;
+}
+
+.scrollCue {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+}
+
+.cueLabel {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.stem {
+  width: 1px;
+  height: 54px;
+  background: linear-gradient(var(--line-2), transparent);
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.stem::after {
+  content: '';
+  position: absolute;
+  top: -45%;
+  left: 0;
+  width: 1px;
+  height: 40%;
+  background: var(--ink);
+  animation: drip 2.4s var(--ease) infinite;
+}
