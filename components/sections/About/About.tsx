@@ -1,16 +1,16 @@
 'use client';
 import { useRef, useState } from 'react';
-import { writings, books } from '@/data/portfolio';
+import {about, books } from '@/data/portfolio';
 import SectionHead from '@/components/base/SectionHead/SectionHead';
-import styles from './Writings.module.css';
+import styles from './About.module.css';
 
-export default function Writings() {
+export default function About() {
   const [activeIdx, setActiveIdx]   = useState<number | null>(3);
   const [platePos,  setPlatePos]    = useState({ top: 0, side: 'right' as 'left' | 'right', offset: '2%' });
   const listRef  = useRef<HTMLDivElement>(null);
   const plateRef = useRef<HTMLDivElement>(null);
 
-  const active = activeIdx !== null ? writings[activeIdx] : null;
+  const active = activeIdx !== null ? about[activeIdx] : null;
 
   const handleEnter = (i: number, el: HTMLAnchorElement) => {
     setActiveIdx(i);
@@ -34,7 +34,7 @@ export default function Writings() {
     <section className={styles.section} id="about">
       <div className="wrap">
         <SectionHead
-          num="V"
+           num="I"
           title="About"
           meta="A brief Glimpse at my life and Idea's."
         />
@@ -46,7 +46,7 @@ export default function Writings() {
           data-reveal
           onMouseLeave={handleLeave}
         >
-          {writings.map((w, i) => (
+          {about.map((w, i) => (
             <a
               key={w.num}
               className={`${styles.entry} ${activeIdx === i ? styles.active : ''}`}

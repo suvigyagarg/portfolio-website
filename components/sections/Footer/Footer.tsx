@@ -10,8 +10,8 @@ export default function Footer() {
             <a href="mailto:suvigya.2003.garg@gmail.com">suvigya.2003.garg@gmail.com</a>
 
           </p>
-        <p>© {new Date().getFullYear()}
-          <p>The concept of the design is inspired by The Renaissance Period</p>
+        <p>© {new Date().getFullYear()}<br/>
+          <span>The concept of the design is inspired by The Renaissance Period</span>
         </p>
       </div>
     </footer>

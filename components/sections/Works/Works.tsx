@@ -9,7 +9,7 @@ export default function Works() {
     <section className={styles.section} id="works">
       <div className="wrap">
         <SectionHead
-          num="I"
+          num="V"
           title="Works"
           meta="Things built out of curiosity — software made to be used."
         />

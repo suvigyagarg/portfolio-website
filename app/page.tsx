@@ -11,7 +11,7 @@ import Hero from '@/components/sections/Hero/Hero';
 import Nav from '@/components/sections/Nav/Nav';
 import Vocation from '@/components/sections/Vocation/Vocation';
 import Works from '@/components/sections/Works/Works';
-import Writings from '@/components/sections/Writings/Writings';
+import About from '@/components/sections/About/About';
 import { useState } from 'react';
 
 
@@ -30,11 +30,11 @@ export default function Home() {
   
         <main>
           <Hero        loaded={loaded} />
-          <Works       />
+           <About   />
           <Faculties   />
           <Vocation   />
           <Commissions />
-          <Writings   />
+          <Works       />
           <Connect    />
         </main>
   

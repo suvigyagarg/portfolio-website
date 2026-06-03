@@ -107,7 +107,7 @@ export const jobs = [
   },
 ] as const;
 
-export const writings = [
+export const about = [
   {
     num: "i",
     title: "Education",

@@ -3,11 +3,11 @@ import { useEffect, useRef } from 'react';
 import styles from './Nav.module.css';
 
 const links = [
-  { n: 'I',   label: 'Works',       href: '#works'       },
+    { n: 'I',   label: 'about',    href: '#about'    },
   { n: 'II',  label: 'Faculties',   href: '#faculties'   },
   { n: 'III', label: 'Vocation',    href: '#vocation'    },
   { n: 'IV',  label: 'Commissions', href: '#commissions' },
-  { n: 'V',   label: 'about',    href: '#about'    },
+ { n: 'V',   label: 'Works',       href: '#works'       },
   { n: 'VI',  label: 'Connect',     href: '#connect'     },
 ];
 
