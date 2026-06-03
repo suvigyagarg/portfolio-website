@@ -135,7 +135,6 @@
   display: grid;
   place-items: center;
   text-align: center;
-  background: var(--parchment);
 }
 
 .fdMark {

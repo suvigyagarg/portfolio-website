@@ -2,30 +2,45 @@ export const works = [
   {
     idx: "i.",
     name: "AI Forge",
-    desc: "A prompt-based website generation tool — describe what you want in plain language and watch a working site take shape, structure and styling and all.",
-    tags: ["Generative AI", "Web Tooling", "DX"],
+    desc: "A prompt-based website generation tool — describe what you want in English language and watch a working site take shape, structure and styling.",
+    tags: ["Generative AI", "Frontend Developnment", "Web tooling"],
     caption: "demo · ai-forge",
+    code: "https://github.com/suvigyagarg/AIForge",
+      thumbnail :"/Images/ai_forge_thumbnail.png",
+    video :"/videos/ai_forge_video.mp4"
   },
-  {
-    idx: "ii.",
-    name: "Let's Chat",
-    desc: "A video-conferencing application — low-latency rooms, clean controls, and a calm interface that gets out of the way of the conversation.",
-    tags: ["WebRTC", "Real-time", "Full-stack"],
-    caption: "demo · lets-chat",
-  },
+  // {
+  //   idx: "ii.",
+  //   name: "Let's Chat",
+  //   desc: "A video-conferencing application — low-latency rooms, clean controls, and a calm interface that gets out of the way of the conversation.",
+  //   tags: ["WebRTC", "Real-time", "Full-stack"],
+  //   caption: "demo · lets-chat",
+  //   code: "https://github.com/suvigyagarg/Lets-Chat",
+  //    thumbnail :"/Images/ai_forge_thumbnail.png",
+  //   video :"/videos/ai_forge_video.mp4"
+
+  // },
   {
     idx: "iii.",
     name: "Eco Voyage",
     desc: "An application to plan trips sustainably — routing, stays and choices weighed by their footprint, so travelling lightly is the easy default.",
-    tags: ["Sustainability", "Planning", "Maps"],
+    tags: ["Sustainability", "Machine Learning", "Frontend"],
     caption: "demo · eco-voyage",
+    code: "https://github.com/Nagpal45/Ecovoyage",
+      thumbnail :"/Images/ecovoyage_thumbnail.png",
+    video :"/videos/ecovoyage_video.mp4"
+
   },
   {
     idx: "iv.",
     name: "Chorus",
-    desc: "A gesture-based music player built for accessibility — playback you can conduct with movement alone, designed for hands that can't reach a small button.",
-    tags: ["Accessibility", "Computer Vision", "Audio"],
+    desc: "A gesture-based music player built for accessibility — playback you can conduct with hand gesture's, Use's the spotify Playback API to play music",
+    tags: ["API Integration", "Computer Vision", "Frontend"],
     caption: "demo · chorus",
+    code: "https://github.com/suvigyagarg/chorus",
+       thumbnail :"/Images/chorus_thumbnail.png",
+    video :"/videos/chorus_video.mp4"
+
   },
 ] as const;
 
@@ -54,6 +69,7 @@ export const faculties = [
       "REST & GraphQL",
       "PostgreSQL",
       "MongoDB",
+      "Supabase"
     ],
     delay: 0.08,
   },
@@ -116,7 +132,7 @@ export const writings = [
   },
   {
     num: "iii",
-    title: "Believes",
+    title: "Belief",
     meta: "",
     tag: "Software Engineer · Buisness Developnment",
     excerpt:

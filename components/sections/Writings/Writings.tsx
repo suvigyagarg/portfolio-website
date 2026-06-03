@@ -5,7 +5,7 @@ import SectionHead from '@/components/base/SectionHead/SectionHead';
 import styles from './Writings.module.css';
 
 export default function Writings() {
-  const [activeIdx, setActiveIdx]   = useState<number | null>(null);
+  const [activeIdx, setActiveIdx]   = useState<number | null>(3);
   const [platePos,  setPlatePos]    = useState({ top: 0, side: 'right' as 'left' | 'right', offset: '2%' });
   const listRef  = useRef<HTMLDivElement>(null);
   const plateRef = useRef<HTMLDivElement>(null);

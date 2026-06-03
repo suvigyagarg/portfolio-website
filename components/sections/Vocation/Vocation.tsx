@@ -11,7 +11,7 @@ export default function Vocation() {
         <SectionHead
           num="III"
           title="Vocation"
-          meta="Experience Gained — so far."
+          meta="The Career Path — so far."
         />
         <div className={styles.grid}>
           <div className={styles.ledger} data-reveal>
@@ -39,7 +39,11 @@ export default function Vocation() {
           </div>
 
           <div className={styles.plate} data-reveal style={{ '--reveal-delay': '0.08s' } as React.CSSProperties}>
-            <DemoPlate caption="demo · olo-care" tall />
+            <DemoPlate
+              caption="demo · olo-care"
+              thumbnail="/Images/synapsis_thumbnail.png"
+              videoSrc="/videos/synapsis_video.mov"
+            />
           </div>
         </div>
       </div>

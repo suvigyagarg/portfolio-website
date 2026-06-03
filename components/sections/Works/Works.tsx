@@ -20,6 +20,14 @@ export default function Works() {
                 <span className={styles.idx}>{w.idx}</span>
                 <h3 className={styles.workName}>{w.name}</h3>
                 <p className={styles.workDesc}>{w.desc}</p>
+                <a
+                  className={styles.code}
+                  href={w.code}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Check out Code <span className={styles.arr}>→</span>
+                </a>
                 <div className={styles.workTags}>
                   {w.tags.map((tag) => (
                     <span key={tag} className={styles.tag}>{tag}</span>
@@ -27,7 +35,9 @@ export default function Works() {
                 </div>
               </div>
               <div className={styles.workPlate}>
-                <DemoPlate caption={w.caption} />
+                <DemoPlate caption={w.caption}
+                thumbnail={w.thumbnail}
+                videoSrc={w.video} />
               </div>
             </article>
           ))}

@@ -48,6 +48,26 @@
   margin: 0;
 }
 
+.code {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 0.6em;
+  margin-top: 24px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line-2);
+  padding-bottom: 3px;
+  transition: gap 0.4s var(--ease);
+}
+.code:hover      { gap: 1.1em; }
+.code:hover .arr { transform: translateX(4px); }
+
+.arr { transition: transform 0.4s var(--ease); }
+
 .workTags {
   display: flex;
   flex-wrap: wrap;

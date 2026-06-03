@@ -6,31 +6,43 @@ interface Props {
   caption: string;
   tall?: boolean;
   videoSrc?: string;
+  thumbnail?: string;
 }
 
-export default function DemoPlate({ caption, tall, videoSrc = '/videos/demo.mov' }: Props) {
+export default function DemoPlate({
+  caption,
+  tall,
+  videoSrc = '/videos/synapsis_video.mov',
+  thumbnail = '/Images/synapsis_thumbnail.png',
+}: Props) {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handleClick = () => {
-    if (!playing) {
-      setPlaying(true);
-      videoRef.current?.play();
-    } else {
-      setPlaying(false);
-      if (videoRef.current) { videoRef.current.pause(); videoRef.current.currentTime = 0; }
-    }
+  const handleEnter = () => {
+    setPlaying(true);
+    videoRef.current?.play().catch(() => {});
+  };
+
+  const handleLeave = () => {
+    setPlaying(false);
+    if (videoRef.current) { videoRef.current.pause(); videoRef.current.currentTime = 0; }
   };
 
   return (
     <figure
       className={`${styles.plate} ${tall ? styles.tall : ''} ${playing ? styles.playing : ''}`}
-      onClick={handleClick}
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
     >
       <span className={`${styles.corner} ${styles.tl}`} />
       <span className={`${styles.corner} ${styles.tr}`} />
       <span className={`${styles.corner} ${styles.bl}`} />
       <span className={`${styles.corner} ${styles.br}`} />
+
+      {thumbnail && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img className={styles.thumb} src={thumbnail} alt="" aria-hidden="true" />
+      )}
 
       <video
         ref={videoRef}
@@ -39,14 +51,8 @@ export default function DemoPlate({ caption, tall, videoSrc = '/videos/demo.mov'
         muted
         loop
         playsInline
-        preload="none"
+        preload="metadata"
       />
-
-      <span className={styles.play} aria-label="Play demo">
-        <svg viewBox="0 0 16 16" aria-hidden="true">
-          <path d="M3 2 L14 8 L3 14 Z" />
-        </svg>
-      </span>
 
       <figcaption className={styles.cap}>
         <span className={styles.dot} />
