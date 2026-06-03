@@ -26,7 +26,7 @@ export default function Writings() {
     });
   };
 
-  const handleLeave = () => setActiveIdx(null);
+  const handleLeave = () => setActiveIdx(3);
 
   const tilt = platePos.side === 'right' ? '2.4deg' : '-2.6deg';
 
@@ -49,7 +49,6 @@ export default function Writings() {
           {writings.map((w, i) => (
             <a
               key={w.num}
-              href={w.href}
               className={`${styles.entry} ${activeIdx === i ? styles.active : ''}`}
               onMouseEnter={(e) => handleEnter(i, e.currentTarget)}
             >
@@ -63,7 +62,7 @@ export default function Writings() {
         {/* floating preview plate */}
         <div
           ref={plateRef}
-          className={`${styles.plate} ${activeIdx !== null ? styles.show : ''}`}
+          className={`${styles.plate} ${activeIdx !== null && activeIdx !== 3 ? styles.show : ''}`}
           aria-hidden="true"
           style={{
             top:   platePos.top,
