@@ -100,6 +100,7 @@ export const writings = [
     excerpt:
       "Jaypee Institute of Information and Technology",
     body: "I am a 2025 Computer Science Engineering graduate with a 7.1 CGPA. My studies focused on system design, web development, and system-level programming, alongside a growing interest in leveraging technical skills for business development.",
+    image: "/Images/about1.jpg",
     href: "#",
   },
    {
@@ -110,6 +111,7 @@ export const writings = [
     excerpt:
       "A software developer with over 3 years of experience working with JavaScript and typescript—and more recently, Go .",
     body: " I’ve experience in building frontends and backend, and I love turning cool ideas into real, working products.",
+    image: "/Images/about2.jpg",
     href: "#",
   },
   {
@@ -120,6 +122,7 @@ export const writings = [
     excerpt:
       " I Believe that breath of curiosity matters in an age of Information.",
     body: "I enjoy tackling new problems, whether that means learning a new skill or stepping into a different part of the product cycle. I want to work alongside teams where my ability to adapt quickly translates into building better, highly effective solutions. ",
+    image: "/Images/about3.jpg",
     href: "#",
   },
  
@@ -146,8 +149,8 @@ export const books = [
 ] as const;
 
 export const socials = [
+   { label: "LinkedIn", href: "https://www.linkedin.com/in/suvigyagarg/" },
   { label: "GitHub", href: "https://github.com/suvigyagarg" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/suvigyagarg/" },
   // { label: "Twitter", href: "#" },
   { label: "Email", href: "suvigyagarg178@gmail.com" },
   { label: "Resume", href: "https://drive.google.com/file/d/1N9ZvkB2f9utvCi5Q0wREWTZPs_Sxzt3M/view?usp=sharing" },

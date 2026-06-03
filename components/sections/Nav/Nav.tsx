@@ -7,7 +7,7 @@ const links = [
   { n: 'II',  label: 'Faculties',   href: '#faculties'   },
   { n: 'III', label: 'Vocation',    href: '#vocation'    },
   { n: 'IV',  label: 'Commissions', href: '#commissions' },
-  { n: 'V',   label: 'Writings',    href: '#writings'    },
+  { n: 'V',   label: 'about',    href: '#about'    },
   { n: 'VI',  label: 'Connect',     href: '#connect'     },
 ];
 

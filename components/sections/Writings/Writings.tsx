@@ -31,11 +31,11 @@ export default function Writings() {
   const tilt = platePos.side === 'right' ? '2.4deg' : '-2.6deg';
 
   return (
-    <section className={styles.section} id="writings">
+    <section className={styles.section} id="about">
       <div className="wrap">
         <SectionHead
           num="V"
-          title="Writings"
+          title="About"
           meta="A brief Glimpse at my life and Idea's."
         />
 
@@ -71,7 +71,10 @@ export default function Writings() {
             ['--tilt' as string]: tilt,
           }}
         >
-          <div className={styles.plImg} />
+          <div
+            className={styles.plImg}
+            style={active?.image ? { backgroundImage: `url(${active.image})` } : undefined}
+          />
           <p className={styles.plExcerpt}>{active?.excerpt}</p>
           <p className={styles.plBody}>{active?.body}</p>
           <p className={styles.plTag}>{active?.tag}</p>
