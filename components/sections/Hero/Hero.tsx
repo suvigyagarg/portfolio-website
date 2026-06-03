@@ -91,8 +91,8 @@ export default function Hero({ loaded }: Props) {
           <span className={styles.dash} />
         </div>
         <p ref={introRef} className={styles.heroIntro}>
-          A software engineer by profession — but a Renaissance man at heart, forever drawn to
-          contribute across fields, and to keep learning.
+          I am a 22 year old software engineer based out of India — who's drawn to
+          contribute across fields, to grow and learn.
         </p>
         <div ref={cueRef} className={styles.scrollCue}>
           <span className={styles.cueLabel}>Begin</span>

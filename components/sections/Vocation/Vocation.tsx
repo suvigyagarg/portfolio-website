@@ -11,7 +11,7 @@ export default function Vocation() {
         <SectionHead
           num="III"
           title="Vocation"
-          meta="Where the craft is practised in earnest — companies and the work made within them."
+          meta="Experience Gained — so far."
         />
         <div className={styles.grid}>
           <div className={styles.ledger} data-reveal>

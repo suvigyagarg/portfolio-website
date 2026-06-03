@@ -10,7 +10,7 @@ export default function Commissions() {
         <SectionHead
           num="IV"
           title="Commissions"
-          meta="Independent work taken on for patrons — freelancing, end to end."
+          meta="Independent work taken on for freelancing."
         />
         <div className={styles.commission}>
           <div className={styles.body} data-reveal>

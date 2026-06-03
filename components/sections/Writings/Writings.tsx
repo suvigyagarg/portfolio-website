@@ -36,7 +36,7 @@ export default function Writings() {
         <SectionHead
           num="V"
           title="Writings"
-          meta="Essays on attention, technology and the examined life. Hover to glimpse a page."
+          meta="A brief Glimpse at my life and Idea's."
         />
 
         {/* essay list */}
@@ -78,7 +78,7 @@ export default function Writings() {
         </div>
 
         {/* bookshelf */}
-        <div className={styles.bookshelf} data-reveal>
+        {/* <div className={styles.bookshelf} data-reveal>
           <div className={styles.shelfHead}>
             <span className={styles.sEyebrow}>From the Shelf</span>
             <h3 className={styles.sTitle}>Favourite Books</h3>
@@ -93,7 +93,7 @@ export default function Writings() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

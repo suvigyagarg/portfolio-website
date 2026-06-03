@@ -18,9 +18,12 @@
   font-size: 12px;
   letter-spacing: 0.05em;
   color: var(--ink-3);
+  justify-content: center;
 }
 
 .sig {
+  display: flex;
+  flex-direction: column;
   font-family: var(--serif);
   font-style: italic;
   font-size: 18px !important;

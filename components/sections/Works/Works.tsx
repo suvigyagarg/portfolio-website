@@ -11,7 +11,7 @@ export default function Works() {
         <SectionHead
           num="I"
           title="Works"
-          meta="Things built out of curiosity — software made to be used, not only shipped."
+          meta="Things built out of curiosity — software made to be used."
         />
         <div className={styles.works}>
           {works.map((w, i) => (

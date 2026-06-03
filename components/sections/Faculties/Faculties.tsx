@@ -9,7 +9,7 @@ export default function Faculties() {
         <SectionHead
           num="II"
           title="Faculties"
-          meta="The instruments of the practice — the tools the work is made with."
+          meta="The skills I know my way with ."
         />
         <div className={styles.faculties}>
           {faculties.map((f) => (

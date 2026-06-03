@@ -43,7 +43,7 @@ export default function Connect() {
         <SectionHead num="VI" title="Connect" center />
 
         <p className={styles.invite} data-reveal>
-          If any of this resonates, the door is open.
+          If any of this resonates with you.
         </p>
 
         <div className={styles.contactWrap} data-reveal style={{ '--reveal-delay': '0.08s' } as React.CSSProperties}>

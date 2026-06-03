@@ -85,7 +85,7 @@ export const jobs = [
   {
     company: "Unikon AI",
     period: "June, 2024 - August, 2024",
-    roles: [{ label: "Software Engineer", current: false }],
+    roles: [{ label: "SDE Intern", current: false }],
     desc: "Earlier chapter — shipping product engineering at the intersection of AI and everyday tools.",
     link: null,
   },
@@ -94,44 +94,45 @@ export const jobs = [
 export const writings = [
   {
     num: "i",
-    title: "A Renaissance Man",
-    meta: "Essay · 12 min",
-    tag: "Essay · The Self",
+    title: "Education",
+    meta: "B.Tech · JIIT Noida · 2025",
+    tag: "B.Tech · Computer Science Engineering",
     excerpt:
-      "On refusing to specialise — why breadth of curiosity still matters in an age that pays the narrow.",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+      "Jaypee Institute of Information and Technology",
+    body: "I am a 2025 Computer Science Engineering graduate with a 7.1 CGPA. My studies focused on system design, web development, and system-level programming, alongside a growing interest in leveraging technical skills for business development.",
     href: "#",
   },
-  {
+   {
     num: "ii",
-    title: "The Fight for Attention",
-    meta: "Essay · 9 min",
-    tag: "Essay · Technology",
+    title: "Technical Ability",
+    meta: "3+ years · Experinence",
+    tag: "Typescript · GO · Frontend Design",
     excerpt:
-      "Our focus has become the scarcest resource of the century. Notes on noticing, and on taking it back.",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dolor sagittis. Quisque tincidunt scelerisque libero ut imperdiet.",
+      "A software developer with over 3 years of experience working with JavaScript and typescript—and more recently, Go .",
+    body: " I’ve experience in building frontends and backend, and I love turning cool ideas into real, working products.",
     href: "#",
   },
   {
     num: "iii",
-    title: "Techno-Feudalism",
-    meta: "Essay · 14 min",
-    tag: "Essay · Economy",
+    title: "Believes",
+    meta: "",
+    tag: "Software Engineer · Buisness Developnment",
     excerpt:
-      "When platforms quietly become landlords — who really owns the commons we all now live inside?",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pretium tincidunt lacus, eget gravida purus euismod sed. Nullam aliquet vestibulum augue non varius.",
+      " I Believe that breath of curiosity matters in an age of Information.",
+    body: "I enjoy tackling new problems, whether that means learning a new skill or stepping into a different part of the product cycle. I want to work alongside teams where my ability to adapt quickly translates into building better, highly effective solutions. ",
     href: "#",
   },
-  {
-    num: "iv",
-    title: "Frugal Living",
-    meta: "Essay · 8 min",
-    tag: "Essay · Living",
-    excerpt:
-      "Essentialism as a design principle for a life — subtracting until only what truly matters remains.",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
-    href: "#",
-  },
+ 
+  // {
+  //   num: "iv",
+  //   title: "Hobbies",
+  //   meta: "Essay · 8 min",
+  //   tag: "Essay · Living",
+  //   excerpt:
+  //     "Essentialism as a design principle for a life — subtracting until only what truly matters remains.",
+  //   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.",
+  //   href: "#",
+  // },
 ] as const;
 
 export const books = [
@@ -145,9 +146,9 @@ export const books = [
 ] as const;
 
 export const socials = [
-  { label: "GitHub", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "Twitter", href: "#" },
-  { label: "Email", href: "#" },
-  { label: "Resume", href: "#" },
+  { label: "GitHub", href: "https://github.com/suvigyagarg" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/suvigyagarg/" },
+  // { label: "Twitter", href: "#" },
+  { label: "Email", href: "suvigyagarg178@gmail.com" },
+  { label: "Resume", href: "https://drive.google.com/file/d/1N9ZvkB2f9utvCi5Q0wREWTZPs_Sxzt3M/view?usp=sharing" },
 ] as const;

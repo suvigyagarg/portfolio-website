@@ -29,7 +29,7 @@ export default function Nav() {
     <header ref={navRef} className={styles.nav}>
       <a className={styles.brand} href="#top">
         <span className={styles.mono}>S·G</span>
-        <span className={styles.est}>Anno MMXXVI</span>
+        <span className={styles.est}>Anno MMIII</span>
       </a>
       <nav className={styles.navLinks}>
         {links.map(({ n, label, href }) => (
