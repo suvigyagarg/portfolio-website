@@ -1,6 +1,7 @@
-import SectionHead from '@/components/SectionHead/SectionHead';
-import DemoPlate from '@/components/DemoPlate/DemoPlate';
+
+import DemoPlate from '@/components/base/DemoPlate/DemoPlate';
 import styles from './Commissions.module.css';
+import SectionHead from '@/components/base/SectionHead/SectionHead';
 
 export default function Commissions() {
   return (

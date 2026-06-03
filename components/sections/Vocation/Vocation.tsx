@@ -1,7 +1,8 @@
 import { jobs } from '@/data/portfolio';
-import SectionHead from '@/components/SectionHead/SectionHead';
-import DemoPlate from '@/components/DemoPlate/DemoPlate';
+import SectionHead from '@/components/base/SectionHead/SectionHead';
+
 import styles from './Vocation.module.css';
+import DemoPlate from '@/components/base/DemoPlate/DemoPlate';
 
 export default function Vocation() {
   return (

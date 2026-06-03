@@ -179,10 +179,10 @@ export default function CosmosCanvas({ loaded }: Props) {
         const ly  = oy + Math.sin(ang) * rr * 0.92;
         const labelA = globalA * Math.max(0, Math.min(1, (introT - 0.3 - i * 0.07) / 0.4));
         if (labelA <= 0.01) continue;
-        const fs = Math.max(9, Math.min(13, SCALE * 0.012));
+        const fs = Math.max(8, Math.min(12, SCALE * 0.012));
         ctx.save();
         ctx.translate(lx, ly);
-        ctx.font = `600 ${fs}px 'Helvetica Neue', Helvetica, Arial, sans-serif`;
+        ctx.font = `400 ${fs}px 'Helvetica Neue', Helvetica, Arial, sans-serif`;
         ctx.fillStyle = ink(0.5 * labelA);
         const txt = L.text, ls = fs * 0.28;
         let total = 0;

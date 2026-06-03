@@ -1,7 +1,7 @@
 'use client';
 import { useRef, useState } from 'react';
 import { writings, books } from '@/data/portfolio';
-import SectionHead from '@/components/SectionHead/SectionHead';
+import SectionHead from '@/components/base/SectionHead/SectionHead';
 import styles from './Writings.module.css';
 
 export default function Writings() {

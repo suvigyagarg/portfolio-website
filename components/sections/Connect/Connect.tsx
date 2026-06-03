@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef } from 'react';
 import { socials } from '@/data/portfolio';
-import SectionHead from '@/components/SectionHead/SectionHead';
+import SectionHead from '@/components/base/SectionHead/SectionHead';
 import styles from './Connect.module.css';
 
 type FormState = 'idle' | 'sending' | 'done' | 'error';

@@ -58,10 +58,10 @@ export default function Hero({ loaded }: Props) {
 
     // ---- staggered fade-ups for the remaining hero elements ----
     const fadeUps: [React.RefObject<HTMLElement | null>, number][] = [
-      [eyebrowRef, 1900],
-      [roleRef,   2950],
-      [introRef,  3200],
-      [cueRef,    3550],
+      [eyebrowRef, 2000],
+      [roleRef,   3050],
+      [introRef,  3500],
+      [cueRef,    3850],
     ];
 
     fadeUps.forEach(([ref, delay]) => {
@@ -79,7 +79,10 @@ export default function Hero({ loaded }: Props) {
     <section className={`${styles.hero} hero-section`} id="top">
       <div className="wrap">
         <p ref={eyebrowRef} className={`eyebrow ${styles.heroEyebrow}`}>
-          A Renaissance Practice · Software &amp; Beyond
+          <span className={styles.wordPair}>
+            <span className={styles.wordDefault}>A Renaissance</span>
+            <span className={styles.wordHover}>An <span className={styles.aiAccent}>ai</span></span>
+          </span>{' '}Practice · Software &amp; Beyond
         </p>
         <h1 ref={nameRef} className={styles.heroName}>Suvigya Garg</h1>
         <div ref={roleRef} className={styles.heroRole}>
