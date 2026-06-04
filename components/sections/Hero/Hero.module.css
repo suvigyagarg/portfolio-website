@@ -135,7 +135,7 @@
 }
 
 .stem::after {
-  content: "";
+  content: '';
   position: absolute;
   top: -45%;
   left: 0;

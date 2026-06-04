@@ -76,17 +76,32 @@
   padding-bottom: 3px;
   transition: gap 0.4s var(--ease);
 }
-.link:hover      { gap: 1.1em; }
-.link:hover .arr { transform: translateX(4px); }
+.link:hover {
+  gap: 1.1em;
+}
+.link:hover .arr {
+  transform: translateX(4px);
+}
 
-.arr { transition: transform 0.4s var(--ease); }
+.arr {
+  transition: transform 0.4s var(--ease);
+}
 
 @media (max-width: 820px) {
-  .commission { grid-template-columns: 1fr; }
+  .commission {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 760px) {
-  .name    { font-size: 40px; }
-  .outcome { flex-direction: column; gap: 22px; }
-  .v       { max-width: none; }
+  .name {
+    font-size: 40px;
+  }
+  .outcome {
+    flex-direction: column;
+    gap: 22px;
+  }
+  .v {
+    max-width: none;
+  }
 }

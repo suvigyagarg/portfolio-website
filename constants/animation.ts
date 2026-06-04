@@ -29,9 +29,9 @@ export const ORBITS = [
 ] as const;
 
 export const LABELS = [
-  { text: "ASTRONOMIA", r: 0.3, speed: 0.061, phase: 0.0 },
-  { text: "GEOMETRIA", r: 0.395, speed: -0.049, phase: 2.4 },
-  { text: "MVSICA", r: 0.485, speed: 0.04, phase: 4.3 },
-  { text: "PICTVRA", r: 0.585, speed: -0.033, phase: 1.2 },
-  { text: "INGEGNO", r: 0.66, speed: 0.027, phase: 5.5 },
+  { text: 'ASTRONOMIA', r: 0.3, speed: 0.061, phase: 0.0 },
+  { text: 'GEOMETRIA', r: 0.395, speed: -0.049, phase: 2.4 },
+  { text: 'MVSICA', r: 0.485, speed: 0.04, phase: 4.3 },
+  { text: 'PICTVRA', r: 0.585, speed: -0.033, phase: 1.2 },
+  { text: 'INGEGNO', r: 0.66, speed: 0.027, phase: 5.5 },
 ] as const;

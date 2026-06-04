@@ -29,14 +29,18 @@ export default function Works() {
                 </a>
                 <div className={styles.workTags}>
                   {w.tags.map((tag) => (
-                    <span key={tag} className={styles.tag}>{tag}</span>
+                    <span key={tag} className={styles.tag}>
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>
               <div className={styles.workPlate}>
-                <DemoPlate caption={w.caption}
-                thumbnail={w.thumbnail}
-                videoSrc={w.video} />
+                <DemoPlate
+                  caption={w.caption}
+                  thumbnail={w.thumbnail}
+                  videoSrc={w.video}
+                />
               </div>
             </article>
           ))}

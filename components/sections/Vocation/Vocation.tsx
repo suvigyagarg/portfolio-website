@@ -23,14 +23,22 @@ export default function Vocation() {
                 </div>
                 <div className={styles.postRole}>
                   {job.roles.map((r) => (
-                    <span key={r.label} className={`${styles.badge} ${r.current ? styles.now : ''}`}>
+                    <span
+                      key={r.label}
+                      className={`${styles.badge} ${r.current ? styles.now : ''}`}
+                    >
                       {r.label}
                     </span>
                   ))}
                 </div>
                 <p className={styles.postDesc}>{job.desc}</p>
                 {job.link && (
-                  <a className={styles.postLink} href={job.link.href} target="_blank" rel="noopener noreferrer">
+                  <a
+                    className={styles.postLink}
+                    href={job.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {job.link.label} <span className={styles.arr}>→</span>
                   </a>
                 )}
@@ -38,7 +46,11 @@ export default function Vocation() {
             ))}
           </div>
 
-          <div className={styles.plate} data-reveal style={{ '--reveal-delay': '0.08s' } as React.CSSProperties}>
+          <div
+            className={styles.plate}
+            data-reveal
+            style={{ '--reveal-delay': '0.08s' } as React.CSSProperties}
+          >
             <DemoPlate
               caption="demo · olo-care"
               thumbnail="/Images/synapsis_thumbnail.png"

@@ -2,22 +2,23 @@
 import { useEffect, useRef } from 'react';
 import styles from './Hero.module.css';
 
-interface Props { loaded: boolean; }
+interface Props {
+  loaded: boolean;
+}
 
 const EASING = 'cubic-bezier(.18,.74,.24,1)';
 
 export default function Hero({ loaded }: Props) {
-  const nameRef    = useRef<HTMLHeadingElement>(null);
+  const nameRef = useRef<HTMLHeadingElement>(null);
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
-  const roleRef    = useRef<HTMLDivElement>(null);
-  const introRef   = useRef<HTMLParagraphElement>(null);
-  const cueRef     = useRef<HTMLDivElement>(null);
+  const roleRef = useRef<HTMLDivElement>(null);
+  const introRef = useRef<HTMLParagraphElement>(null);
+  const cueRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!loaded) return;
 
-
-     const name = nameRef.current;
+    const name = nameRef.current;
     if (name && !name.dataset.split) {
       name.dataset.split = '1';
       const words = (name.textContent ?? '').trim().split(' ');
@@ -32,7 +33,8 @@ export default function Hero({ loaded }: Props) {
           wordEl.appendChild(ch);
         });
         name.appendChild(wordEl);
-        if (wi < words.length - 1) name.appendChild(document.createTextNode(' '));
+        if (wi < words.length - 1)
+          name.appendChild(document.createTextNode(' '));
       });
     }
 
@@ -41,26 +43,26 @@ export default function Hero({ loaded }: Props) {
       name.animate(
         [
           { opacity: 0, transform: 'scale(.46)', filter: 'blur(16px)' },
-          { opacity: 1, transform: 'scale(1)',   filter: 'blur(0)'    },
+          { opacity: 1, transform: 'scale(1)', filter: 'blur(0)' },
         ],
-        { duration: 1400, easing: EASING, fill: 'both', delay: 2150 },
+        { duration: 1400, easing: EASING, fill: 'both', delay: 2150 }
       );
     }
 
     const fadeUps: [React.RefObject<HTMLElement | null>, number][] = [
       [eyebrowRef, 1800],
-      [roleRef,   2550],
-      [introRef,  3000],
-      [cueRef,    3250],
+      [roleRef, 2550],
+      [introRef, 3000],
+      [cueRef, 3250],
     ];
 
     fadeUps.forEach(([ref, delay]) => {
       ref.current?.animate(
         [
           { opacity: 0, transform: 'scale(.9)', filter: 'blur(7px)' },
-          { opacity: 1, transform: 'scale(1)',  filter: 'blur(0)'   },
+          { opacity: 1, transform: 'scale(1)', filter: 'blur(0)' },
         ],
-        { duration: 1100, easing: EASING, fill: 'both', delay },
+        { duration: 1100, easing: EASING, fill: 'both', delay }
       );
     });
   }, [loaded]);
@@ -71,18 +73,23 @@ export default function Hero({ loaded }: Props) {
         <p ref={eyebrowRef} className={`eyebrow ${styles.heroEyebrow}`}>
           <span className={styles.wordPair}>
             <span className={styles.wordDefault}>A Renaissance</span>
-            <span className={styles.wordHover}>An <span className={styles.aiAccent}>ai</span></span>
-          </span>{' '}Practice · Software &amp; Beyond
+            <span className={styles.wordHover}>
+              An <span className={styles.aiAccent}>ai</span>
+            </span>
+          </span>{' '}
+          Practice · Software &amp; Beyond
         </p>
-        <h1 ref={nameRef} className={styles.heroName}>Suvigya Garg</h1>
+        <h1 ref={nameRef} className={styles.heroName}>
+          Suvigya Garg
+        </h1>
         <div ref={roleRef} className={styles.heroRole}>
           <span className={styles.dash} />
           <span>Software Engineer</span>
           <span className={styles.dash} />
         </div>
         <p ref={introRef} className={styles.heroIntro}>
-          I am a 22 year old software engineer based out of India — who's drawn to
-          contribute across fields, to grow and learn.
+          I&apos;m a 22 year old software engineer based out of India — who&apos;s
+          drawn to contribute across fields, to grow and learn.
         </p>
         <div ref={cueRef} className={styles.scrollCue}>
           <span className={styles.cueLabel}>Begin</span>

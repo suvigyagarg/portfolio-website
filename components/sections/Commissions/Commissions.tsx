@@ -1,4 +1,3 @@
-
 import DemoPlate from '@/components/base/DemoPlate/DemoPlate';
 import styles from './Commissions.module.css';
 import SectionHead from '@/components/base/SectionHead/SectionHead';
@@ -16,7 +15,8 @@ export default function Commissions() {
           <div className={styles.body} data-reveal>
             <h3 className={styles.name}>Bharat Electrode Company</h3>
             <p className={styles.desc}>
-          Built a complete online product catalog for a small - scale business, expanding their reach and generating customer inquiries.
+              Built a complete online product catalog for a small - scale
+              business, expanding their reach and generating customer inquiries.
             </p>
             <a
               className={styles.link}
@@ -29,21 +29,24 @@ export default function Commissions() {
             <div className={styles.outcome}>
               <div>
                 <div className={styles.k}>Offline → Online</div>
-                <div className={styles.v}>Digital Catalogue and Enquiry forum built end to&nbsp;end</div>
+                <div className={styles.v}>
+                  Digital Catalogue and Enquiry forum built end to&nbsp;end
+                </div>
               </div>
               {/* <div>
                 <div className={styles.k}>Tech + Trade</div>
                 <div className={styles.v}>Engineering paired with business development</div>
               </div> */}
             </div>
-            
           </div>
-          <div data-reveal style={{ '--reveal-delay': '0.08s' } as React.CSSProperties}>
-            <DemoPlate 
-            caption="demo · bharat-electrode" 
+          <div
+            data-reveal
+            style={{ '--reveal-delay': '0.08s' } as React.CSSProperties}
+          >
+            <DemoPlate
+              caption="demo · bharat-electrode"
               thumbnail="/Images/bec_thumbnail.png"
               videoSrc="/videos/bec_video.mov"
-           
             />
           </div>
         </div>

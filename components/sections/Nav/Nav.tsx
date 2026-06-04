@@ -4,7 +4,10 @@ import styles from './Nav.module.css';
 import { links } from '@/constants';
 
 // section-dots list: Hero (#top) + the existing nav links, in page order
-const sections = [{ label: 'Top', href: '#top' }, ...links.map(({ label, href }) => ({ label, href }))];
+const sections = [
+  { label: 'Top', href: '#top' },
+  ...links.map(({ label, href }) => ({ label, href })),
+];
 
 export default function Nav() {
   const navRef = useRef<HTMLElement>(null);
@@ -15,7 +18,11 @@ export default function Nav() {
     const ids = sections.map((s) => s.href.slice(1));
 
     const onScroll = () => {
-      if (nav) nav.classList.toggle(styles.docked, window.scrollY > window.innerHeight * 0.5);
+      if (nav)
+        nav.classList.toggle(
+          styles.docked,
+          window.scrollY > window.innerHeight * 0.5
+        );
 
       // active = last section whose top is above scrollTop + 42% viewport
       const line = window.scrollY + window.innerHeight * 0.42;
@@ -33,10 +40,13 @@ export default function Nav() {
   }, []);
 
   const jump = (href: string) => {
-    document.getElementById(href.slice(1))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document
+      .getElementById(href.slice(1))
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const activeLabel = sections.find((s) => s.href.slice(1) === activeId)?.label ?? 'Top';
+  const activeLabel =
+    sections.find((s) => s.href.slice(1) === activeId)?.label ?? 'Top';
 
   return (
     <>

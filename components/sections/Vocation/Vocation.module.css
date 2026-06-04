@@ -20,7 +20,10 @@
   padding-block: 30px;
   border-top: 1px solid var(--line);
 }
-.post:first-child { border-top: 0; padding-top: 0; }
+.post:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
 
 .postTop {
   display: flex;
@@ -95,13 +98,23 @@
   padding-bottom: 3px;
   transition: gap 0.4s var(--ease);
 }
-.postLink:hover     { gap: 1.1em; }
-.postLink:hover .arr { transform: translateX(4px); }
+.postLink:hover {
+  gap: 1.1em;
+}
+.postLink:hover .arr {
+  transform: translateX(4px);
+}
 
-.arr { transition: transform 0.4s var(--ease); }
+.arr {
+  transition: transform 0.4s var(--ease);
+}
 
-.plate { /* wrapper for DemoPlate */ }
+.plate {
+  /* wrapper for DemoPlate */
+}
 
 @media (max-width: 900px) {
-  .grid { grid-template-columns: 1fr; }
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

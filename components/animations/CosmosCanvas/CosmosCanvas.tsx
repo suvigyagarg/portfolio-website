@@ -1,6 +1,6 @@
-"use client";
-import { INK, LABELS, LIGHT, ORBITS } from "@/constants/animation";
-import { useEffect, useRef } from "react";
+'use client';
+import { INK, LABELS, LIGHT, ORBITS } from '@/constants/animation';
+import { useEffect, useRef } from 'react';
 
 interface Props {
   loaded: boolean;
@@ -25,11 +25,10 @@ export default function CosmosCanvas({ loaded }: Props) {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
     if (!ctx) return;
 
-   
-    const INTRO_MS =  2600;
+    const INTRO_MS = 2600;
 
     startRef.current = performance.now();
 
@@ -79,8 +78,8 @@ export default function CosmosCanvas({ loaded }: Props) {
       H = window.innerHeight;
       canvas!.width = W * DPR;
       canvas!.height = H * DPR;
-      canvas!.style.width = W + "px";
-      canvas!.style.height = H + "px";
+      canvas!.style.width = W + 'px';
+      canvas!.style.height = H + 'px';
       ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
       isMobile = W <= 760;
       CX = W / 2;
@@ -91,7 +90,7 @@ export default function CosmosCanvas({ loaded }: Props) {
 
     function computeScrollFade() {
       const hero = document.querySelector(
-        ".hero-section",
+        '.hero-section'
       ) as HTMLElement | null;
       const h = hero ? hero.offsetHeight : H;
       const y = window.scrollY || 0;
@@ -108,11 +107,11 @@ export default function CosmosCanvas({ loaded }: Props) {
       const g = ctx.createRadialGradient(lx, ly, r * 0.1, x, y, r);
       g.addColorStop(
         0,
-        `rgba(${LIGHT[0]},${LIGHT[1]},${LIGHT[2]},${0.95 * alpha})`,
+        `rgba(${LIGHT[0]},${LIGHT[1]},${LIGHT[2]},${0.95 * alpha})`
       );
       g.addColorStop(
         0.32,
-        `rgba(${INK[0] + 70},${INK[1] + 64},${INK[2] + 56},${0.9 * alpha})`,
+        `rgba(${INK[0] + 70},${INK[1] + 64},${INK[2] + 56},${0.9 * alpha})`
       );
       g.addColorStop(1, `rgba(${INK[0]},${INK[1]},${INK[2]},${alpha})`);
       ctx.beginPath();
@@ -149,7 +148,6 @@ export default function CosmosCanvas({ loaded }: Props) {
         return;
       }
 
-
       for (const s of stars) {
         const tw = 0.6 + 0.4 * Math.sin(t * s.tws + s.tw);
         ctx.beginPath();
@@ -181,7 +179,7 @@ export default function CosmosCanvas({ loaded }: Props) {
         sunR * 0.4,
         ox,
         oy,
-        sunR * 4,
+        sunR * 4
       );
       halo.addColorStop(0, ink(0.1 * globalA));
       halo.addColorStop(1, ink(0));
@@ -222,8 +220,8 @@ export default function CosmosCanvas({ loaded }: Props) {
       }
 
       // orbiting text labels
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       for (let i = 0; i < labelCount; i++) {
         const L = LABELS[i];
         const rr = L.r * SCALE;
@@ -259,18 +257,17 @@ export default function CosmosCanvas({ loaded }: Props) {
       rafId = requestAnimationFrame(frame);
     }
 
-      window.addEventListener(
-        "mousemove",
-        (e) => {
-          tmx = e.clientX / W - 0.5;
-          tmy = e.clientY / H - 0.5;
-        },
-        { passive: true },
-      );
+    window.addEventListener(
+      'mousemove',
+      (e) => {
+        tmx = e.clientX / W - 0.5;
+        tmy = e.clientY / H - 0.5;
+      },
+      { passive: true }
+    );
 
-
-    window.addEventListener("scroll", computeScrollFade, { passive: true });
-    window.addEventListener("resize", resize);
+    window.addEventListener('scroll', computeScrollFade, { passive: true });
+    window.addEventListener('resize', resize);
 
     resize();
     computeScrollFade();
@@ -278,10 +275,9 @@ export default function CosmosCanvas({ loaded }: Props) {
 
     return () => {
       cancelAnimationFrame(rafId);
-      window.removeEventListener("resize", resize);
-      window.removeEventListener("scroll", computeScrollFade);
+      window.removeEventListener('resize', resize);
+      window.removeEventListener('scroll', computeScrollFade);
     };
-
   }, []);
 
   useEffect(() => {

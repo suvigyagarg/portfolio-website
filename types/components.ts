@@ -4,7 +4,6 @@ export interface DemoPlateProps {
   thumbnail?: string;
 }
 
-
 export interface SectionHeadProps {
   num: string;
   title: string;

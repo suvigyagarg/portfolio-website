@@ -1,15 +1,19 @@
 'use client';
 import { useRef, useState } from 'react';
 import Image from 'next/image';
-import {about, books } from '@/data/portfolio';
+import { about, books } from '@/data/portfolio';
 import SectionHead from '@/components/base/SectionHead/SectionHead';
 import styles from './About.module.css';
 
 export default function About() {
-  const [activeIdx, setActiveIdx]   = useState<number | null>(3);
-  const [openIdx,   setOpenIdx]     = useState<number | null>(null);
-  const [platePos,  setPlatePos]    = useState({ top: 0, side: 'right' as 'left' | 'right', offset: '2%' });
-  const listRef  = useRef<HTMLDivElement>(null);
+  const [activeIdx, setActiveIdx] = useState<number | null>(3);
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const [platePos, setPlatePos] = useState({
+    top: 0,
+    side: 'right' as 'left' | 'right',
+    offset: '2%',
+  });
+  const listRef = useRef<HTMLDivElement>(null);
   const plateRef = useRef<HTMLDivElement>(null);
 
   const active = activeIdx !== null ? about[activeIdx] : null;
@@ -18,13 +22,19 @@ export default function About() {
     setActiveIdx(i);
     if (!listRef.current) return;
     const listRect = listRef.current.getBoundingClientRect();
-    const rowRect  = el.getBoundingClientRect();
-    const top      = rowRect.top - listRect.top - 40;
-    const isRight  = i % 2 === 0;
+    const rowRect = el.getBoundingClientRect();
+    const top = rowRect.top - listRect.top - 40;
+    const isRight = i % 2 === 0;
     setPlatePos({
       top: Math.max(-30, top),
       side: isRight ? 'right' : 'left',
-      offset: isRight ? (i % 4 === 0 ? '2%' : '8%') : (i % 4 === 1 ? '4%' : '10%'),
+      offset: isRight
+        ? i % 4 === 0
+          ? '2%'
+          : '8%'
+        : i % 4 === 1
+          ? '4%'
+          : '10%',
     });
   };
 
@@ -39,7 +49,7 @@ export default function About() {
     <section className={styles.section} id="about">
       <div className="wrap">
         <SectionHead
-           num="I"
+          num="I"
           title="About"
           meta="A brief Glimpse at my life and Idea's."
         />
@@ -51,7 +61,10 @@ export default function About() {
           onMouseLeave={handleLeave}
         >
           {about.map((w, i) => (
-            <div key={w.num} className={`${styles.item} ${openIdx === i ? styles.itemOpen : ''}`}>
+            <div
+              key={w.num}
+              className={`${styles.item} ${openIdx === i ? styles.itemOpen : ''}`}
+            >
               <button
                 type="button"
                 className={`${styles.entry} ${activeIdx === i ? styles.active : ''}`}
@@ -62,9 +75,11 @@ export default function About() {
                 <span className={styles.eNum}>{w.num}</span>
                 <span className={styles.eTitle}>{w.title}</span>
                 <span className={styles.eMeta}>{w.meta}</span>
-                <span className={styles.eToggle} aria-hidden="true">{openIdx === i ? '–' : '+'}</span>
+                <span className={styles.eToggle} aria-hidden="true">
+                  {openIdx === i ? '–' : '+'}
+                </span>
               </button>
-             <div className={styles.panel}>
+              <div className={styles.panel}>
                 <div className={styles.panelInner}>
                   <div className={styles.pImg}>
                     {w.image && (
@@ -91,7 +106,7 @@ export default function About() {
           className={`${styles.plate} ${activeIdx !== null && activeIdx !== 3 ? styles.show : ''}`}
           aria-hidden="true"
           style={{
-            top:   platePos.top,
+            top: platePos.top,
             [platePos.side]: platePos.offset,
             ['--tilt' as string]: tilt,
           }}

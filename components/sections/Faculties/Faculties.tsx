@@ -17,7 +17,11 @@ export default function Faculties() {
               key={f.rom}
               className={styles.faculty}
               data-reveal
-              style={f.delay ? ({ '--reveal-delay': `${f.delay}s` } as React.CSSProperties) : undefined}
+              style={
+                f.delay
+                  ? ({ '--reveal-delay': `${f.delay}s` } as React.CSSProperties)
+                  : undefined
+              }
             >
               <div className={styles.fHead}>
                 <span className={styles.fRom}>{f.rom}</span>
@@ -25,7 +29,9 @@ export default function Faculties() {
               </div>
               <div className={styles.chips}>
                 {f.skills.map((skill) => (
-                  <span key={skill} className={styles.skill}>{skill}</span>
+                  <span key={skill} className={styles.skill}>
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
