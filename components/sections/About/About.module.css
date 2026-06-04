@@ -4,7 +4,6 @@
   padding-block: clamp(90px, 12vw, 180px);
 }
 
-/* ---- essay list ---------------------------------------------------------- */
 .list {
   position: relative;
   z-index: 2;
@@ -34,7 +33,6 @@
   border-bottom: 1px solid var(--line);
 }
 
-/* expand/collapse glyph — mobile only (revealed in the 760 query) */
 .eToggle {
   display: none;
   margin-left: auto;
@@ -77,18 +75,18 @@
   transition: opacity 0.4s var(--ease);
 }
 
-/* dim siblings on hover */
 .hovering .entry {
-  opacity: 0.32;
+  opacity: 0.72;
+
 }
 .hovering .entry.active {
   opacity: 1;
 }
 .active .eTitle {
   transform: translateX(26px);
+  font-weight: 600;
 }
 
-/* ---- mobile accordion panel (hidden on desktop) ------------------------- */
 .panel {
   display: none;
 }
@@ -163,8 +161,6 @@
     opacity: 1;
   }
 }
-
-/* ---- floating excerpt plate --------------------------------------------- */
 .plate {
   position: absolute;
   z-index: 5;
@@ -243,7 +239,6 @@
   }
 }
 
-/* ---- bookshelf ----------------------------------------------------------- */
 .bookshelf {
   margin-top: clamp(74px, 9vw, 128px);
 }

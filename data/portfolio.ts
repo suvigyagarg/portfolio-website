@@ -123,7 +123,7 @@ export const about = [
     tag: 'Typescript · GO · Frontend Design',
     excerpt:
       'A software developer with over 3 years of experience working with JavaScript and typescript—and more recently, Go .',
-    body: ' I’ve experience in building frontends and backend, and I love turning cool ideas into real, working products.',
+    body: ' I’ve experience in building frontends and backend, and I love turning cool ideas into real, working products.I’m Currently learning python with ML-ops and AI Engineering.',
     image: '/Images/about2.jpg',
     href: '#',
   },

@@ -8,21 +8,13 @@ interface Props {
 
 export default function Loader({ onLoaded }: Props) {
   useEffect(() => {
-    const t = setTimeout(() => {
+    const LoaderTimeout = setTimeout(() => {
       document.body.classList.add('loaded');
       onLoaded();
     }, 950);
 
-    // const safety = setTimeout(() => {
-    //   if (!document.body.classList.contains('loaded')) {
-    //     document.body.classList.add('loaded');
-    //     onLoaded();
-    //   }
-    // }, 2600);
-
     return () => {
-      clearTimeout(t);
-      // clearTimeout(safety);
+      clearTimeout(LoaderTimeout);
     };
   }, [onLoaded]);
 

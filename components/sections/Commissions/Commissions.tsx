@@ -33,10 +33,6 @@ export default function Commissions() {
                   Digital Catalogue and Enquiry forum built end to&nbsp;end
                 </div>
               </div>
-              {/* <div>
-                <div className={styles.k}>Tech + Trade</div>
-                <div className={styles.v}>Engineering paired with business development</div>
-              </div> */}
             </div>
           </div>
           <div

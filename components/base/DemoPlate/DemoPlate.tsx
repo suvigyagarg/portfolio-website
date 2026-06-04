@@ -4,31 +4,45 @@ import Image from 'next/image';
 import styles from './DemoPlate.module.css';
 import { DemoPlateProps } from '@/types/components';
 
-
 export default function DemoPlate({
   caption,
-  videoSrc = '/videos/synapsis_video.mov',
-  thumbnail = '/Images/synapsis_thumbnail.png',
+  videoSrc ,
+  thumbnail ,
 }: DemoPlateProps) {
-  
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handleEnter = () => {
+  const play = () => {
     setPlaying(true);
     videoRef.current?.play().catch(() => {});
   };
 
-  const handleLeave = () => {
+  const stop = () => {
     setPlaying(false);
-    if (videoRef.current) { videoRef.current.pause(); videoRef.current.currentTime = 0; }
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
+
+  const handlePointerEnter = (e: React.PointerEvent) => {
+    if (e.pointerType === 'mouse') play();
+  };
+  const handlePointerLeave = (e: React.PointerEvent) => {
+    if (e.pointerType === 'mouse') stop();
+  };
+  const handleClick = (e: React.MouseEvent) => {
+    if ((e.nativeEvent as PointerEvent).pointerType !== 'mouse') {
+      playing ? stop() : play();
+    }
   };
 
   return (
     <div
       className={`${styles.plate} ${playing ? styles.playing : ''}`}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+      onClick={handleClick}
     >
       <span className={`${styles.corner} ${styles.tl}`} />
       <span className={`${styles.corner} ${styles.tr}`} />

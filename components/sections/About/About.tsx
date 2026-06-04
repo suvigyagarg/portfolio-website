@@ -40,7 +40,6 @@ export default function About() {
 
   const handleLeave = () => setActiveIdx(3);
 
-  // mobile: tap toggles an inline accordion panel (one open at a time)
   const toggle = (i: number) => setOpenIdx((prev) => (prev === i ? null : i));
 
   const tilt = platePos.side === 'right' ? '2.4deg' : '-2.6deg';
