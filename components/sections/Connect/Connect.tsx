@@ -3,8 +3,8 @@ import { useState, useRef } from 'react';
 import { socials } from '@/data/portfolio';
 import SectionHead from '@/components/base/SectionHead/SectionHead';
 import styles from './Connect.module.css';
+import { FormState } from '@/types/section';
 
-type FormState = 'idle' | 'sending' | 'done' | 'error';
 
 export default function Connect() {
   const [state,   setState]   = useState<FormState>('idle');

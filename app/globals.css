@@ -1,7 +1,3 @@
-/* ==========================================================================
-   A Renaissance Practice — Suvigya Garg
-   Parchment / ink monochrome · Cormorant Garamond + Helvetica
-   ========================================================================== */
 
 :root {
   --parchment:      #f3ede1;
@@ -13,7 +9,6 @@
   --line:           rgba(33, 29, 24, 0.16);
   --line-2:         rgba(33, 29, 24, 0.30);
 
-  /* --font-serif injected by next/font on <html> */
   --serif: var(--font-serif), 'EB Garamond', Georgia, serif;
   --sans:  'Helvetica Neue', Helvetica, Arial, sans-serif;
 
@@ -52,7 +47,6 @@ body {
 a  { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
-/* ---- shared layout ------------------------------------------------------- */
 .wrap {
   width: 100%;
   max-width: var(--maxw);
@@ -69,7 +63,6 @@ img { max-width: 100%; display: block; }
   color: var(--ink-3);
 }
 
-/* ---- atmosphere ---------------------------------------------------------- */
 .grain,
 .vignette {
   position: fixed;
@@ -87,8 +80,6 @@ img { max-width: 100%; display: block; }
 .vignette {
   background: radial-gradient(120% 100% at 50% 40%, transparent 55%, rgba(33, 29, 24, 0.1) 100%);
 }
-
-/* ---- celestial canvas ---------------------------------------------------- */
 #cosmos {
   position: fixed;
   inset: 0;

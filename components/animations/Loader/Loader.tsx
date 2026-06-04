@@ -19,7 +19,7 @@ export default function Loader({ onLoaded }: Props) {
       onLoaded();
     }, 950);
 
-    // Safety: never trap behind loader
+
     const safety = setTimeout(() => {
       if (!document.body.classList.contains('loaded')) {
         document.body.classList.add('loaded');
@@ -28,7 +28,6 @@ export default function Loader({ onLoaded }: Props) {
     }, 2600);
 
     return () => { clearTimeout(t); clearTimeout(safety); };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

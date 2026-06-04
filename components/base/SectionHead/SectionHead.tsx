@@ -1,13 +1,7 @@
+import { SectionHeadProps } from '@/types/components';
 import styles from './SectionHead.module.css';
 
-interface Props {
-  num: string;
-  title: string;
-  meta?: string;
-  center?: boolean;
-}
-
-export default function SectionHead({ num, title, meta, center }: Props) {
+export default function SectionHead({ num, title, meta, center }: SectionHeadProps) {
   return (
     <div
       className={styles.sectionHead}

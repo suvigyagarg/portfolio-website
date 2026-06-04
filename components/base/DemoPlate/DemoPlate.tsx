@@ -2,20 +2,15 @@
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 import styles from './DemoPlate.module.css';
+import { DemoPlateProps } from '@/types/components';
 
-interface Props {
-  caption: string;
-  tall?: boolean;
-  videoSrc?: string;
-  thumbnail?: string;
-}
 
 export default function DemoPlate({
   caption,
-  tall,
   videoSrc = '/videos/synapsis_video.mov',
   thumbnail = '/Images/synapsis_thumbnail.png',
-}: Props) {
+}: DemoPlateProps) {
+  
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -30,8 +25,8 @@ export default function DemoPlate({
   };
 
   return (
-    <figure
-      className={`${styles.plate} ${tall ? styles.tall : ''} ${playing ? styles.playing : ''}`}
+    <div
+      className={`${styles.plate} ${playing ? styles.playing : ''}`}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
@@ -61,10 +56,10 @@ export default function DemoPlate({
         preload="metadata"
       />
 
-      <figcaption className={styles.cap}>
+      <div className={styles.cap}>
         <span className={styles.dot} />
         {caption}
-      </figcaption>
-    </figure>
+      </div>
+    </div>
   );
 }

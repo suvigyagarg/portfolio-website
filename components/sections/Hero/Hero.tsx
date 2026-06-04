@@ -44,7 +44,6 @@ export default function Hero({ loaded }: Props) {
       });
     }
 
-    // ---- name burst: scale from tiny + blur, origin slightly below centre ----
     if (name) {
       name.style.transformOrigin = '50% 58%';
       name.animate(
@@ -56,7 +55,6 @@ export default function Hero({ loaded }: Props) {
       );
     }
 
-    // ---- staggered fade-ups for the remaining hero elements ----
     const fadeUps: [React.RefObject<HTMLElement | null>, number][] = [
       [eyebrowRef, 2000],
       [roleRef,   3050],

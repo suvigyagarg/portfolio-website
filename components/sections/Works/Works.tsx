@@ -1,6 +1,5 @@
 import { works } from '@/data/portfolio';
 import SectionHead from '@/components/base/SectionHead/SectionHead';
-
 import styles from './Works.module.css';
 import DemoPlate from '@/components/base/DemoPlate/DemoPlate';
 
