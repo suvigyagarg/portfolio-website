@@ -10,17 +10,36 @@
   z-index: 2;
 }
 
+.item { position: relative; }
+
 .entry {
   display: flex;
   align-items: baseline;
   gap: 24px;
+  width: 100%;
   padding-block: clamp(24px, 3.2vw, 40px);
+  border: 0;
   border-top: 1px solid var(--line);
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
   cursor: pointer;
   position: relative;
   transition: opacity 0.5s var(--ease);
 }
-.entry:last-child { border-bottom: 1px solid var(--line); }
+.item:last-child .entry { border-bottom: 1px solid var(--line); }
+
+/* expand/collapse glyph — mobile only (revealed in the 760 query) */
+.eToggle {
+  display: none;
+  margin-left: auto;
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1;
+  color: var(--ink-3);
+  flex: none;
+}
 
 .eNum {
   font-family: var(--serif);
@@ -57,9 +76,66 @@
 .hovering .entry.active { opacity: 1; }
 .active .eTitle         { transform: translateX(26px); }
 
-@media (max-width: 720px) {
-  .active .eTitle { transform: translateX(10px); }
+/* ---- mobile accordion panel (hidden on desktop) ------------------------- */
+.panel { display: none; }
+
+.panelInner {
+  padding: 4px 0 26px;
+}
+.pImg {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background-color: var(--parchment-deep);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.pImgPhoto { object-fit: cover; }
+.pExcerpt {
+  margin: 16px 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.pBody {
+  margin: 10px 0 0;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.pTag {
+  margin: 14px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+@media (max-width: 760px) {
+  .active .eTitle { transform: none; }
   .eMeta          { display: none; }
+  .eToggle        { display: block; }
+
+  /* the desktop hover-dim shouldn't linger on touch */
+  .hovering .entry { opacity: 1; }
+
+  .panel {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.55s var(--ease), opacity 0.45s var(--ease);
+  }
+  .itemOpen .panel {
+    max-height: 720px;
+    opacity: 1;
+  }
 }
 
 /* ---- floating excerpt plate --------------------------------------------- */
@@ -129,7 +205,7 @@
   color: var(--ink-3);
 }
 
-@media (max-width: 720px) { .plate { display: none; } }
+@media (max-width: 760px) { .plate { display: none; } }
 
 /* ---- bookshelf ----------------------------------------------------------- */
 .bookshelf { margin-top: clamp(74px, 9vw, 128px); }

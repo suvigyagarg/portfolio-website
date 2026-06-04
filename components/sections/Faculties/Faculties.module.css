@@ -57,7 +57,8 @@
   cursor: default;
 }
 
-.skill:hover {
+.skill:hover,
+.skill:active {
   background: var(--ink);
   color: var(--parchment);
   border-color: var(--ink);
@@ -66,4 +67,8 @@
 
 @media (max-width: 820px) {
   .faculties { grid-template-columns: 1fr; gap: 48px; }
+}
+
+@media (max-width: 760px) {
+  .fName { font-size: 26px; }
 }

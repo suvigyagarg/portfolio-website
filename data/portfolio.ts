@@ -21,7 +21,7 @@ export const works = [
 
   // },
   {
-    idx: "iii.",
+    idx: "ii.",
     name: "Eco Voyage",
     desc: "An application to plan trips sustainably — routing, stays and choices weighed by their footprint, so travelling lightly is the easy default.",
     tags: ["Sustainability", "Machine Learning", "Frontend"],
@@ -32,7 +32,7 @@ export const works = [
 
   },
   {
-    idx: "iv.",
+    idx: "iii.",
     name: "Chorus",
     desc: "A gesture-based music player built for accessibility — playback you can conduct with hand gesture's, Use's the spotify Playback API to play music",
     tags: ["API Integration", "Computer Vision", "Frontend"],

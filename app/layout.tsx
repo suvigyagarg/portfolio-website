@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
 
@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   title: 'Suvigya Garg - Software Engineer',
   description:
     'I am a 22 year old software engineer based out of India — whos drawn to contribute across fields, to grow and learn.',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

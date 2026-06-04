@@ -8,8 +8,8 @@ export default function SectionHead({ num, title, meta, center }: SectionHeadPro
       data-reveal
       style={center ? { justifyContent: 'center', border: 0, marginBottom: 24 } : undefined}
     >
-      <span className={styles.num}>{num}</span>
-      <h2 className={styles.title}>{title}</h2>
+    
+      <h2 className={styles.title}>   <span className={styles.num}>{num}</span> {title}</h2>
       {meta && <p className={styles.meta}>{meta}</p>}
     </div>
   );

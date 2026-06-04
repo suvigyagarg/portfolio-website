@@ -84,3 +84,9 @@
 @media (max-width: 820px) {
   .commission { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 760px) {
+  .name    { font-size: 40px; }
+  .outcome { flex-direction: column; gap: 22px; }
+  .v       { max-width: none; }
+}

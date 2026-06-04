@@ -261,6 +261,33 @@
   opacity: 1;
 }
 
+.social:active {
+  color: var(--ink);
+  transform: scale(1.08);
+}
+.social:active .orbit {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+@media (max-width: 760px) {
+  .form { grid-template-columns: 1fr; gap: 26px; }
+  .field input,
+  .field textarea { min-height: 44px; }
+  .formFoot { flex-direction: column; align-items: stretch; gap: 14px; }
+  .sendBtn { width: 100%; justify-content: center; min-height: 54px; }
+  /* socials: full-width tappable rows */
+  .socials { width: 100%; gap: 2px; }
+  .social {
+    width: 100%;
+    justify-content: center;
+    font-size: 34px;
+    padding-block: 0.18em;
+  }
+  /* neutralise the desktop "dim siblings" hover on touch */
+  .socials:hover .social { opacity: 1; transform: none; }
+}
+
 @media (max-width: 560px) {
   .form {
     grid-template-columns: 1fr;

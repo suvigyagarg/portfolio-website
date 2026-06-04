@@ -52,13 +52,15 @@ export default function CosmosCanvas({ loaded }: Props) {
       tmx = 0,
       tmy = 0;
     let scrollFade = 1;
+    let driftY = 0;
+    let isMobile = false;
     let rafId = 0;
 
     const ink = (a: number) => `rgba(${INK[0]},${INK[1]},${INK[2]},${a})`;
 
     function seedStars() {
       stars = [];
-      const n = Math.round((W * H) / 14000);
+      const n = Math.round((W * H) / (isMobile ? 26000 : 14000));
       for (let i = 0; i < n; i++) {
         stars.push({
           x: Math.random(),
@@ -80,8 +82,9 @@ export default function CosmosCanvas({ loaded }: Props) {
       canvas!.style.width = W + "px";
       canvas!.style.height = H + "px";
       ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      isMobile = W <= 760;
       CX = W / 2;
-      CY = H * 0.46;
+      CY = isMobile ? H * 0.3 : H * 0.46; // luminary behind the hero name on phones
       SCALE = Math.min(W, H);
       seedStars();
     }
@@ -94,6 +97,8 @@ export default function CosmosCanvas({ loaded }: Props) {
       const y = window.scrollY || 0;
       const t = Math.min(1, y / (h * 0.85));
       scrollFade = 1 - easeInOut(t) * 0.86;
+      // mobile has no mouse parallax — drive a gentle upward drift from scroll
+      driftY = isMobile ? Math.min(y * 0.05, H * 0.28) : 0;
     }
 
     function sphere(x: number, y: number, r: number, alpha: number) {
@@ -127,10 +132,16 @@ export default function CosmosCanvas({ loaded }: Props) {
 
       mx += (tmx - mx) * 0.05;
       my += (tmy - my) * 0.05;
-      const par = 26 * scrollFade;
+      // mobile: no mouse parallax, just scroll drift; desktop: mouse parallax
+      const par = isMobile ? 0 : 26 * scrollFade;
       const ox = CX + mx * par,
-        oy = CY + my * par;
+        oy = CY + my * par - driftY;
       const globalA = e * scrollFade;
+
+      // mobile recompose: fewer orbits/labels, larger bodies
+      const orbitCount = isMobile ? 3 : ORBITS.length;
+      const labelCount = isMobile ? 2 : LABELS.length;
+      const bodyScale = isMobile ? 1.4 : 1;
 
       ctx.clearRect(0, 0, W, H);
       if (globalA <= 0.001) {
@@ -148,7 +159,7 @@ export default function CosmosCanvas({ loaded }: Props) {
       }
 
       ctx.save();
-      for (let i = 0; i < ORBITS.length; i++) {
+      for (let i = 0; i < orbitCount; i++) {
         const o = ORBITS[i];
         const rr = o.r * SCALE;
         const local = Math.max(0, Math.min(1, (introT - i * 0.06) / 0.5));
@@ -188,7 +199,7 @@ export default function CosmosCanvas({ loaded }: Props) {
       }
 
       // orbiting bodies
-      for (let i = 0; i < ORBITS.length; i++) {
+      for (let i = 0; i < orbitCount; i++) {
         const o = ORBITS[i];
         const rr = o.r * SCALE;
         const ang = o.phase + t * o.speed;
@@ -196,7 +207,7 @@ export default function CosmosCanvas({ loaded }: Props) {
         const by = oy + Math.sin(ang) * rr;
         const bodyA =
           globalA * Math.max(0, Math.min(1, (introT - 0.1 - i * 0.05) / 0.4));
-        sphere(bx, by, o.size * (0.6 + 0.4 * e), bodyA);
+        sphere(bx, by, o.size * (0.6 + 0.4 * e) * bodyScale, bodyA);
         if (o.moon) {
           const mang = ang + t * o.moon.speed;
           const mx2 = bx + Math.cos(mang) * o.moon.r;
@@ -213,7 +224,7 @@ export default function CosmosCanvas({ loaded }: Props) {
       // orbiting text labels
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      for (let i = 0; i < LABELS.length; i++) {
+      for (let i = 0; i < labelCount; i++) {
         const L = LABELS[i];
         const rr = L.r * SCALE;
         const ang = L.phase + t * L.speed;

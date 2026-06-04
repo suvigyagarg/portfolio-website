@@ -72,3 +72,60 @@
 @media (max-width: 860px) {
   .navLinks { display: none; }
 }
+
+/* ---- mobile bottom section-dots ----------------------------------------- */
+.dots {
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  z-index: 45;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 16px;
+  border-radius: 100px;
+  background: rgba(243, 237, 225, 0.78);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 14px 34px -22px rgba(33, 29, 24, 0.6);
+}
+
+.lbl {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-right: 4px;
+}
+
+.dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 0 1px var(--line-2) inset;
+  cursor: pointer;
+  transition: box-shadow 0.4s var(--ease), transform 0.4s var(--ease);
+}
+/* invisible 44px hit area for comfortable tapping */
+.dot::before {
+  content: '';
+  position: absolute;
+  inset: -18px;
+}
+.dotActive {
+  box-shadow: 0 0 0 1px var(--ink) inset;
+  background: var(--ink);
+  transform: scale(1.15);
+}
+
+@media (max-width: 760px) {
+  .dots { display: flex; }
+}

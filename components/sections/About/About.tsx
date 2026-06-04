@@ -7,13 +7,14 @@ import styles from './About.module.css';
 
 export default function About() {
   const [activeIdx, setActiveIdx]   = useState<number | null>(3);
+  const [openIdx,   setOpenIdx]     = useState<number | null>(null);
   const [platePos,  setPlatePos]    = useState({ top: 0, side: 'right' as 'left' | 'right', offset: '2%' });
   const listRef  = useRef<HTMLDivElement>(null);
   const plateRef = useRef<HTMLDivElement>(null);
 
   const active = activeIdx !== null ? about[activeIdx] : null;
 
-  const handleEnter = (i: number, el: HTMLAnchorElement) => {
+  const handleEnter = (i: number, el: HTMLElement) => {
     setActiveIdx(i);
     if (!listRef.current) return;
     const listRect = listRef.current.getBoundingClientRect();
@@ -28,6 +29,9 @@ export default function About() {
   };
 
   const handleLeave = () => setActiveIdx(3);
+
+  // mobile: tap toggles an inline accordion panel (one open at a time)
+  const toggle = (i: number) => setOpenIdx((prev) => (prev === i ? null : i));
 
   const tilt = platePos.side === 'right' ? '2.4deg' : '-2.6deg';
 
@@ -47,15 +51,38 @@ export default function About() {
           onMouseLeave={handleLeave}
         >
           {about.map((w, i) => (
-            <a
-              key={w.num}
-              className={`${styles.entry} ${activeIdx === i ? styles.active : ''}`}
-              onMouseEnter={(e) => handleEnter(i, e.currentTarget)}
-            >
-              <span className={styles.eNum}>{w.num}</span>
-              <span className={styles.eTitle}>{w.title}</span>
-              <span className={styles.eMeta}>{w.meta}</span>
-            </a>
+            <div key={w.num} className={`${styles.item} ${openIdx === i ? styles.itemOpen : ''}`}>
+              <button
+                type="button"
+                className={`${styles.entry} ${activeIdx === i ? styles.active : ''}`}
+                onMouseEnter={(e) => handleEnter(i, e.currentTarget)}
+                onClick={() => toggle(i)}
+                aria-expanded={openIdx === i}
+              >
+                <span className={styles.eNum}>{w.num}</span>
+                <span className={styles.eTitle}>{w.title}</span>
+                <span className={styles.eMeta}>{w.meta}</span>
+                <span className={styles.eToggle} aria-hidden="true">{openIdx === i ? '–' : '+'}</span>
+              </button>
+             <div className={styles.panel}>
+                <div className={styles.panelInner}>
+                  <div className={styles.pImg}>
+                    {w.image && (
+                      <Image
+                        className={styles.pImgPhoto}
+                        src={w.image}
+                        alt=""
+                        fill
+                        sizes="(max-width: 760px) 92vw, 360px"
+                      />
+                    )}
+                  </div>
+                  <p className={styles.pExcerpt}>{w.excerpt}</p>
+                  <p className={styles.pBody}>{w.body}</p>
+                  <p className={styles.pTag}>{w.tag}</p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 

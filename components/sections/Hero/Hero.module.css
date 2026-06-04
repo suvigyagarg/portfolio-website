@@ -61,13 +61,17 @@
   line-height: 0.92;
   letter-spacing: 0.01em;
   margin: 0;
-  opacity: 0;                  /* held invisible; WAAPI animation reveals it */
-  transform-origin: 50% 58%;  /* burst from slightly below centre, matching original */
+  opacity: 0; /* held invisible; WAAPI animation reveals it */
+  transform-origin: 50% 58%; /* burst from slightly below centre, matching original */
 }
 
 /* character-split spans injected by JS */
-.word { display: inline-block; }
-.ch   { display: inline-block; }
+.word {
+  display: inline-block;
+}
+.ch {
+  display: inline-block;
+}
 
 .heroRole {
   margin-top: 30px;
@@ -131,7 +135,7 @@
 }
 
 .stem::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -45%;
   left: 0;
@@ -139,4 +143,36 @@
   height: 40%;
   background: var(--ink);
   animation: drip 2.4s var(--ease) infinite;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-block: 96px 48px;
+  }
+  .heroEyebrow {
+    margin-bottom: 26px;
+    font-size: 10px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .heroName {
+    font-size: 72px;
+    line-height: 0.95;
+  }
+  .heroRole {
+    margin-top: 22px;
+    gap: 10px;
+  }
+  .dash {
+    width: 26px;
+  }
+  .heroIntro {
+    margin-top: 28px;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+  .scrollCue {
+    margin-top: 40px;
+  }
 }
