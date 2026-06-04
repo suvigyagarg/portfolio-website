@@ -134,16 +134,4 @@ body.loaded #cosmos {
   50%, 100% { opacity: 0.25; }
 }
 
-/* ---- reduced motion ------------------------------------------------------ */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto;
-  }
-  [data-reveal]       { opacity: 1; transform: none; }
-  #cosmos             { opacity: 1; filter: none; }
-}
+
