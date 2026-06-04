@@ -28,10 +28,8 @@ export default function CosmosCanvas({ loaded }: Props) {
     const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
     if (!ctx) return;
 
-    const reduce = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    const INTRO_MS = reduce ? 1 : 2600;
+   
+    const INTRO_MS =  2600;
 
     startRef.current = performance.now();
 
@@ -140,7 +138,7 @@ export default function CosmosCanvas({ loaded }: Props) {
         return;
       }
 
-      // stardust
+
       for (const s of stars) {
         const tw = 0.6 + 0.4 * Math.sin(t * s.tws + s.tw);
         ctx.beginPath();
@@ -149,7 +147,6 @@ export default function CosmosCanvas({ loaded }: Props) {
         ctx.fill();
       }
 
-      // orbit guide rings
       ctx.save();
       for (let i = 0; i < ORBITS.length; i++) {
         const o = ORBITS[i];
@@ -251,7 +248,6 @@ export default function CosmosCanvas({ loaded }: Props) {
       rafId = requestAnimationFrame(frame);
     }
 
-    if (!reduce) {
       window.addEventListener(
         "mousemove",
         (e) => {
@@ -260,7 +256,7 @@ export default function CosmosCanvas({ loaded }: Props) {
         },
         { passive: true },
       );
-    }
+
 
     window.addEventListener("scroll", computeScrollFade, { passive: true });
     window.addEventListener("resize", resize);

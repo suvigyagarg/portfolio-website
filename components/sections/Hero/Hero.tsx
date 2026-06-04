@@ -16,14 +16,6 @@ export default function Hero({ loaded }: Props) {
   useEffect(() => {
     if (!loaded) return;
 
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (reduce) {
-      [nameRef, eyebrowRef, roleRef, introRef, cueRef].forEach((r) => {
-        if (r.current) r.current.style.opacity = '1';
-      });
-      return;
-    }
 
      const name = nameRef.current;
     if (name && !name.dataset.split) {
@@ -56,10 +48,10 @@ export default function Hero({ loaded }: Props) {
     }
 
     const fadeUps: [React.RefObject<HTMLElement | null>, number][] = [
-      [eyebrowRef, 2000],
-      [roleRef,   3050],
-      [introRef,  3500],
-      [cueRef,    3850],
+      [eyebrowRef, 1800],
+      [roleRef,   2550],
+      [introRef,  3000],
+      [cueRef,    3250],
     ];
 
     fadeUps.forEach(([ref, delay]) => {

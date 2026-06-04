@@ -5,7 +5,9 @@
   display: grid;
   place-items: center;
   background: var(--parchment);
-  transition: opacity 1s var(--ease), visibility 1s var(--ease);
+  transition:
+    opacity 1s var(--ease),
+    visibility 1s var(--ease);
 }
 
 :global(body.loaded) .loader {
@@ -35,16 +37,27 @@
   border: 1px solid var(--line-2);
   opacity: 0;
   animation:
-    ringFadeIn  0.35s cubic-bezier(.16,1,.3,1) 0.4s forwards,
-    ringBreathe 2.4s  ease-in-out              0.4s infinite;
+    ringFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards,
+    ringBreathe 3.6s ease-in-out 0.4s infinite;
 }
 
 @keyframes ringFadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes ringBreathe {
-  0%, 100% { transform: scale(1);    opacity: 1; }
-  50%       { transform: scale(1.45); opacity: 0.3; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(6);
+    opacity: 0.1;
+  }
 }
