@@ -1,15 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { sanitizeText, sanitizeHtml } from '@/lib/sanitize';
 
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const { name, email, message } = (await req.json()) as {
+  const raw = (await req.json()) as {
     name?: string;
     email?: string;
     message?: string;
   };
 
-  if (!name?.trim() || !email?.trim() || !message?.trim()) {
+  // strip any markup from user input before it reaches the email
+  const name = sanitizeText(raw.name);
+  const email = sanitizeText(raw.email);
+  const message = sanitizeText(raw.message);
+
+  if (!name || !email || !message) {
     return NextResponse.json({ error: 'Missing fields.' }, { status: 400 });
   }
 
@@ -22,12 +28,12 @@ export async function POST(req: NextRequest) {
       to,
       subject: `Portfolio message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-      html: `
+      html: sanitizeHtml(`
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
         <hr />
         <p>${message.replace(/\n/g, '<br />')}</p>
-      `,
+      `),
     });
 
     return NextResponse.json({ ok: true });

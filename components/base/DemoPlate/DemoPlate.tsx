@@ -6,8 +6,8 @@ import { DemoPlateProps } from '@/types/components';
 
 export default function DemoPlate({
   caption,
-  videoSrc ,
-  thumbnail ,
+  videoSrc,
+  thumbnail,
 }: DemoPlateProps) {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -56,7 +56,6 @@ export default function DemoPlate({
           alt={caption}
           aria-hidden="true"
           fill
-          sizes="(max-width: 820px) 100vw, 50vw"
         />
       )}
 
