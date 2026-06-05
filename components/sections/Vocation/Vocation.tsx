@@ -53,7 +53,7 @@ export default function Vocation() {
           >
             <DemoPlate
               caption="demo · olo-care"
-              thumbnail="/Images/synapsis_thumbnail.png"
+              thumbnail="/Images/synapsis_thumbnail.webp"
               videoSrc="/videos/synapsis_video.mov"
             />
           </div>

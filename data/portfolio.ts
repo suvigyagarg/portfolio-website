@@ -6,7 +6,7 @@ export const works = [
     tags: ['Generative AI', 'Frontend Developnment', 'Web tooling'],
     caption: 'demo · ai-forge',
     code: 'https://github.com/suvigyagarg/AIForge',
-    thumbnail: '/Images/ai_forge_thumbnail.png',
+    thumbnail: '/Images/ai_forge_thumbnail.webp',
     video: '/videos/ai_forge_video.mp4',
   },
   // {
@@ -16,7 +16,7 @@ export const works = [
   //   tags: ["WebRTC", "Real-time", "Full-stack"],
   //   caption: "demo · lets-chat",
   //   code: "https://github.com/suvigyagarg/Lets-Chat",
-  //    thumbnail :"/Images/ai_forge_thumbnail.png",
+  //    thumbnail :"/Images/ai_forge_thumbnail.webp",
   //   video :"/videos/ai_forge_video.mp4"
 
   // },
@@ -27,7 +27,7 @@ export const works = [
     tags: ['Sustainability', 'Machine Learning', 'Frontend'],
     caption: 'demo · eco-voyage',
     code: 'https://github.com/Nagpal45/Ecovoyage',
-    thumbnail: '/Images/ecovoyage_thumbnail.png',
+    thumbnail: '/Images/ecovoyage_thumbnail.webp',
     video: '/videos/ecovoyage_video.mp4',
   },
   {
@@ -37,7 +37,7 @@ export const works = [
     tags: ['API Integration', 'Computer Vision', 'Frontend'],
     caption: 'demo · chorus',
     code: 'https://github.com/suvigyagarg/chorus',
-    thumbnail: '/Images/chorus_thumbnail.png',
+    thumbnail: '/Images/chorus_thumbnail.webp',
     video: '/videos/chorus_video.mp4',
   },
 ] as const;
@@ -113,7 +113,7 @@ export const about = [
     tag: 'B.Tech · Computer Science Engineering',
     excerpt: 'Jaypee Institute of Information and Technology',
     body: 'I am a 2025 Computer Science Engineering graduate with a 7.1 CGPA. My studies focused on system design, web development, and system-level programming, alongside a growing interest in leveraging technical skills for business development.',
-    image: '/Images/about1.jpg',
+    image: '/Images/about1.webp',
     href: '#',
   },
   {
@@ -124,7 +124,7 @@ export const about = [
     excerpt:
       'A software developer with over 3 years of experience working with JavaScript and typescript—and more recently, Go .',
     body: ' I’ve experience in building frontends and backend, and I love turning cool ideas into real, working products.I’m Currently learning python with ML-ops and AI Engineering.',
-    image: '/Images/about2.jpg',
+    image: '/Images/about2.webp',
     href: '#',
   },
   {
@@ -135,7 +135,7 @@ export const about = [
     excerpt:
       ' I Believe that breath of curiosity matters in an age of Information.',
     body: 'I enjoy tackling new problems, whether that means learning a new skill or stepping into a different part of the product cycle. I want to work alongside teams where my ability to adapt quickly translates into building better, highly effective solutions. ',
-    image: '/Images/about3.jpg',
+    image: '/Images/about3.webp',
     href: '#',
   },
 

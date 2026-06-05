@@ -27,31 +27,10 @@
   vertical-align: baseline;
 }
 
-.wordDefault,
-.wordHover {
+.wordDefault{
   grid-row: 1;
   grid-column: 1;
   transition: opacity 0.45s var(--ease);
-}
-
-.wordHover {
-  opacity: 0;
-}
-
-.heroEyebrow:hover .wordDefault {
-  opacity: 0;
-}
-
-.heroEyebrow:hover .wordHover {
-  opacity: 1;
-}
-
-.aiAccent {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1.22em;
-  letter-spacing: 0.06em;
 }
 
 .heroName {

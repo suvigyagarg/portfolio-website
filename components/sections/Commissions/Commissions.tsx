@@ -41,7 +41,7 @@ export default function Commissions() {
           >
             <DemoPlate
               caption="demo · bharat-electrode"
-              thumbnail="/Images/bec_thumbnail.png"
+              thumbnail="/Images/bec_thumbnail.webp"
               videoSrc="/videos/bec_video.mov"
             />
           </div>
