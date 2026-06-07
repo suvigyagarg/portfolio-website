@@ -74,7 +74,7 @@ export default function Hero({ loaded }: Props) {
           <span className={styles.wordPair}>
             <span className={styles.wordDefault}>A Renaissance</span>
           </span>{' '}
-          Practice · Software &amp; Beyond
+          Practice
         </p>
         <h1 ref={nameRef} className={styles.heroName}>
           Suvigya Garg
@@ -86,7 +86,8 @@ export default function Hero({ loaded }: Props) {
         </div>
         <p ref={introRef} className={styles.heroIntro}>
           I&apos;m a 22 year old software engineer based out of India —
-          who&apos;s drawn to contribute across fields, to grow and learn.
+          who&apos;s drawn to contribute across fields,and want to grow and
+          learn.
         </p>
         <div ref={cueRef} className={styles.scrollCue}>
           <span className={styles.cueLabel}>Begin</span>

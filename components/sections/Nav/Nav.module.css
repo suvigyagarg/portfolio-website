@@ -44,9 +44,43 @@
   color: var(--ink-3);
 }
 
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
 .navLinks {
   display: flex;
   gap: 30px;
+}
+
+/* social icon cluster (top-right) */
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin: -8px; /* keeps layout tight while giving a ~34px tap area */
+  color: var(--ink-2);
+  transition:
+    color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+.social svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+.social:hover {
+  color: var(--ink);
+  transform: translateY(-1px);
 }
 
 .navLink {
@@ -77,6 +111,17 @@
 @media (max-width: 860px) {
   .navLinks {
     display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  /* socials stay in the top-right on mobile, slightly larger for tapping */
+  .socials {
+    gap: 18px;
+  }
+  .social svg {
+    width: 20px;
+    height: 20px;
   }
 }
 

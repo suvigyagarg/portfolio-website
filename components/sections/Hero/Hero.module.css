@@ -8,6 +8,20 @@
   padding-block: 120px 60px;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    62% 52% at 50% 44%,
+    var(--parchment) 0%,
+    rgba(243, 237, 225, 0.25) 36%,
+    rgba(243, 237, 225, 0) 72%
+  );
+}
+
 .hero :global(.wrap) {
   display: flex;
   flex-direction: column;
