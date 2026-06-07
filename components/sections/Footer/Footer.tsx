@@ -9,7 +9,7 @@ export default function Footer() {
           <a href="tel:+918178029305">+91 - 8178029305</a>
           <a href="mailto:suvigyagarg178@gmail.com">suvigyagarg178@gmail.com</a>
         </p>
-        <p>
+        <p suppressHydrationWarning>
           © {new Date().getFullYear()}
           <br />
           <span>

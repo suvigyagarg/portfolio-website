@@ -38,8 +38,11 @@ export default function DemoPlate({
   };
 
   return (
-    <div
+    <button
+      type="button"
       className={`${styles.plate} ${playing ? styles.playing : ''}`}
+      aria-label={`${playing ? 'Stop' : 'Play'} demo: ${caption}`}
+      aria-pressed={playing}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
       onClick={handleClick}
@@ -53,9 +56,10 @@ export default function DemoPlate({
         <Image
           className={styles.thumb}
           src={thumbnail}
-          alt={caption}
+          alt=""
           aria-hidden="true"
           fill
+          sizes="(max-width: 900px) 100vw, 50vw"
         />
       )}
 
@@ -67,12 +71,13 @@ export default function DemoPlate({
         loop
         playsInline
         preload="metadata"
+        aria-hidden="true"
       />
 
       <div className={styles.cap}>
         <span className={styles.dot} />
         {caption}
       </div>
-    </div>
+    </button>
   );
 }

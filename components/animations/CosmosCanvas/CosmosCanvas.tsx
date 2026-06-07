@@ -206,16 +206,17 @@ export default function CosmosCanvas({ loaded }: Props) {
         const bodyA =
           globalA * Math.max(0, Math.min(1, (introT - 0.1 - i * 0.05) / 0.4));
         sphere(bx, by, o.size * (0.6 + 0.4 * e) * bodyScale, bodyA);
-        if (o.moon) {
-          const mang = ang + t * o.moon.speed;
-          const mx2 = bx + Math.cos(mang) * o.moon.r;
-          const my2 = by + Math.sin(mang) * o.moon.r;
+        const moon = o.moon;
+        if (moon) {
+          const mang = ang + t * moon.speed;
+          const mx2 = bx + Math.cos(mang) * moon.r;
+          const my2 = by + Math.sin(mang) * moon.r;
           ctx.beginPath();
-          ctx.arc(bx, by, o.moon.r, 0, Math.PI * 2);
+          ctx.arc(bx, by, moon.r, 0, Math.PI * 2);
           ctx.lineWidth = 1;
           ctx.strokeStyle = ink(0.08 * bodyA);
           ctx.stroke();
-          sphere(mx2, my2, o.moon.size, bodyA);
+          sphere(mx2, my2, moon.size, bodyA);
         }
       }
 

@@ -31,10 +31,14 @@ export default function Connect() {
           message: data.get('message'),
         }),
       });
-      if (!res.ok) throw new Error(await res.text());
-      setState('done');
-    } catch (err) {
-      setErrMsg(err instanceof Error ? err.message : 'Something went wrong.');
+      if (res.ok) {
+        setState('done');
+      } else {
+        setErrMsg((await res.text()) || 'Something went wrong.');
+        setState('error');
+      }
+    } catch {
+      setErrMsg('Something went wrong.');
       setState('error');
     }
   };

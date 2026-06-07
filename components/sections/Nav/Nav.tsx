@@ -8,14 +8,21 @@ const sections = [
   { label: 'Top', href: '#top' },
   ...links.map(({ label, href }) => ({ label, href })),
 ];
+const SECTION_IDS = sections.map((s) => s.href.slice(1));
+const FIRST_ID = SECTION_IDS[0];
+
+function jump(href: string) {
+  document
+    .getElementById(href.slice(1))
+    ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 export default function Nav() {
   const navRef = useRef<HTMLElement>(null);
-  const [activeId, setActiveId] = useState(sections[0].href.slice(1));
+  const [activeId, setActiveId] = useState(FIRST_ID);
 
   useEffect(() => {
     const nav = navRef.current;
-    const ids = sections.map((s) => s.href.slice(1));
 
     const onScroll = () => {
       if (nav)
@@ -26,8 +33,8 @@ export default function Nav() {
 
       // active = last section whose top is above scrollTop + 42% viewport
       const line = window.scrollY + window.innerHeight * 0.42;
-      let current = ids[0];
-      for (const id of ids) {
+      let current = FIRST_ID;
+      for (const id of SECTION_IDS) {
         const el = document.getElementById(id);
         if (el && el.offsetTop <= line) current = id;
       }
@@ -38,12 +45,6 @@ export default function Nav() {
     onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  const jump = (href: string) => {
-    document
-      .getElementById(href.slice(1))
-      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
 
   const activeLabel =
     sections.find((s) => s.href.slice(1) === activeId)?.label ?? 'Top';

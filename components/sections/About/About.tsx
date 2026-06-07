@@ -87,6 +87,7 @@ export default function About() {
                         src={w.image}
                         alt=""
                         fill
+                        sizes="(max-width: 760px) 92vw, 360px"
                       />
                     )}
                   </div>
@@ -116,6 +117,7 @@ export default function About() {
                 src={active.image}
                 alt=""
                 fill
+                sizes="360px"
               />
             )}
           </div>
